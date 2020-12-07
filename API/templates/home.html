@@ -12,12 +12,27 @@
     {% if request.user.fitnessouser.is_trainer %}
         <div>
             <h1>Alle Nutzer</h1>
-        tabelle
+            {% for user in users %}
+                {{ user.user.id }}
+                {{ user.nachname }}
+                {{ user.vorname }}
+            {% endfor %}
+
         </div>
     {% else %}
         <div>
             <h1>Ziele</h1>
+            <br>
+            <br>
+            <br>
+            {% for ziel in ziele %}
 
+                <h3>{{ ziel.ziel }} ({{ ziel.id }})</h3>
+                {% for unterziel in ziel.unterziele %}
+                    {{ unterziel.id }}
+                    {{ unterziel.ziel }} <br>
+                     {% endfor %}
+            {% endfor %}
         </div>
     {% endif %}
 {% else %}
