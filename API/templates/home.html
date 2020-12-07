@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,15 +12,18 @@
     {% if request.user.fitnessouser.is_trainer %}
         <div>
             <h1>Alle Nutzer</h1>
+        tabelle
         </div>
     {% else %}
         <div>
             <h1>Ziele</h1>
+
         </div>
     {% endif %}
 {% else %}
     <div>
-        <h1>login page</h1>
+        <h1>Login page</h1>
+
     </div>
 {% endif %}
 </body>
