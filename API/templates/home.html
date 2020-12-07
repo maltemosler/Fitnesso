@@ -5,6 +5,21 @@
     <title>Main page</title>
 </head>
 <body>
-blub
+
+{% if request.user.is_authenticated %}
+    {% if request.user.fitnessouser.is_trainer %}
+        <div>
+            <h1>Alle Nutzer</h1>
+        </div>
+    {% else %}
+        <div>
+            <h1>Ziele</h1>
+        </div>
+    {% endif %}
+{% else %}
+    <div>
+        <h1>login page</h1>
+    </div>
+{% endif %}
 </body>
 </html>

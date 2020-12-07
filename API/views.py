@@ -1,7 +1,20 @@
 from django.shortcuts import render
 
 
-# Create your views here.
+def global_context(request, context):
+    return context
+
+
 def home_view(request):
-    context = {'title': "Fitnesso"}
-    return render(request, "home.html", context=context)
+    context = {'title': "Fitnesso | Home"}
+    return render(request, "home.html", context=global_context(request, context))
+
+
+def user_anlegen_view(request):
+    context = {'title': "Fitnesso | User anlegen"}
+    return render(request, "user_anlegen.html", context=global_context(request, context))
+
+
+def user_verwalten_view(request):
+    context = {'title': "Fitnesso | User verwalten"}
+    return render(request, "user_verwalten.html", context=global_context(request, context))
