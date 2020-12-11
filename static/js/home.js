@@ -1,3 +1,25 @@
+
+
+function hauptziel_erstellen() {
+    const ziel = $("#home-hauptziel").val();
+
+    sendAJAX("hauptziel_erstellen", {
+            "ziel": ziel,
+        },
+        function () {
+            location.reload();
+        }, function (status_code, message) {
+            console.log(status_code);
+            console.log(message);
+        });
+}
+
+
+
+
+
+
+
 function login() {
     const login_error = $("#login-error");
 
@@ -30,8 +52,6 @@ function delete_user(user_id) {
             "user_id": user_id,
         },
         function () {
-            console.log("logged in");
-            sessionStorage.setItem('status', 'loggedIn');
             location.reload();
         }, function (status_code, message) {
             console.log(status_code);

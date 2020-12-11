@@ -101,3 +101,39 @@ def user_anlegen_view(request):
 def tests(request):
     context = {'title': "Fitnesso | Tests"}
     return render(request, "tests.html", context=global_context(request, context))
+
+
+# ZIELE
+def hauptziel_erstellen(request):
+    ziel = request.POST.get("ziel", "")
+    HauptZiel.objects.create(user=request.user, ziel=ziel)
+    return HttpResponse("200")
+
+
+def hauptziel_delete(request):
+    ziel_id = request.POST.get("ziel_id", "")
+    HauptZiel.objects.filter(id=ziel_id).delete()
+    return HttpResponse("200")
+
+
+def unterziel_erstellen(request):
+    ziel = request.POST.get("ziel", "")
+
+    hauptziel_id = request.POST.get("hauptziel_id", "")
+    hauptziel = HauptZiel.objects.get(ziel=hauptziel_id)
+
+    Unterziel.objects.create(hauptziel=hauptziel, ziel=ziel)
+    return HttpResponse("200")
+
+
+def unterziel_abschliessen(request):
+    unterziel_id = request.POST.get("unterziel_id", "")
+    Unterziel.objects.get(id=unterziel_id).status = True
+
+    return HttpResponse("200")
+
+
+def unterziel_delete(request):
+    unterziel_id = request.POST.get("unterziel_id", "")
+    Unterziel.objects.filter(id=unterziel_id).delete()
+    return HttpResponse("200")
