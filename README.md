@@ -5,6 +5,8 @@ Uni projekt
 
 Setup
 
+    pip install django -U
+    
     python manage.py makemigrations API
     python manage.py migrate 
 

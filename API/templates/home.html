@@ -7,6 +7,8 @@
     <title>Main page</title>
 </head>
 <body>
+<!-- Set up AJAX -->
+{% csrf_token %}
 
 {% if request.user.is_authenticated %}
     {% if request.user.fitnessouser.is_trainer %}
@@ -48,7 +50,9 @@
 {% endif %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static "js/ajax.js" %}?v=1"></script>
 <script src="{% static "js/home.js" %}?v=1"></script>
+<script src="{% static "js/validations.js" %}?v=1"></script>
 
 </body>
 </html>

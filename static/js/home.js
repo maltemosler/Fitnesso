@@ -6,8 +6,9 @@ function login() {
     const email = $("#login-email").val();
     const password = $("#login-password").val();
 
-    const validate_password = validatePassword(password, password, login_error, login_error);
     const validate_email = validateEmail(email, login_error);
+    const validate_password = validatePassword(password, password, login_error, login_error);
+
     if (validate_password && validate_email) {
         sendAJAX("user_login", {
                 "email": email,

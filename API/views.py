@@ -30,7 +30,7 @@ def home_view(request):
     return render(request, "home.html", context=global_context(request, context))
 
 
-@only_ajax
+# @only_ajax
 def user_login(request):
     email = request.POST.get("email", "").lower()
     if not validations.validate_email(email):
@@ -43,7 +43,7 @@ def user_login(request):
     try:
         su = User.objects.get(username=email).fitnessouser
     except User.DoesNotExist:
-        return HttpResponse(status=404)
+        return HttpResponse(status=403)
 
     try:
         user = authenticate(request, username=email, password=password)
