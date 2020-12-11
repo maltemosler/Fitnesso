@@ -2,6 +2,8 @@
 {% load static %}
 
 {% block content %}
+    <link rel="stylesheet" href="{% static "css/home.css" %}">
+
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
             <div>
@@ -20,7 +22,9 @@
                             <td style="color: green">{{ user.user.id }}</td>
                             <td style="color: green">{{ user.nachname }}</td>
                             <td style="color: green">{{ user.vorname }}</td>
-                            <td><button style="color: red" onclick="delete_user({{ user.user.id }})">DELETE</button></td>
+                            <td>
+                                <button style="color: red" onclick="delete_user({{ user.user.id }})">DELETE</button>
+                            </td>
                         </tr>
                     {% endfor %}
                 </table>
@@ -31,7 +35,7 @@
                 <br>
                 <br>
                 Ziel: <input id="home-hauptziel" type="text">
-            <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
+                <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
                 <br>
                 {% for ziel in ziele %}
 
@@ -44,14 +48,20 @@
             </div>
         {% endif %}
     {% else %}
-        <div>
-            <h1>Login page</h1>
-            Login: <input id="login-email" type="text">
-            <br>
-            Password: <input id="login-password" type="password">
-            <br>
-            <button onclick="login()">Login</button>
-            <div id="login-error" style="display:none">Email oder Passwort falsch</div>
+        <div id="login">
+            <video autoplay muted loop id="myVideo">
+                <source src="{% static "resources/fitness-motion-background.mp4" %}" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div id="login-menu">
+                <div id="logo">
+                    <img src="{% static "resources/companylogo.png" %}">
+                </div>
+                <input id="login-email" type="text">
+                <input id="login-password" type="password">
+                <button onclick="login()">Login</button>
+                <div id="login-error">Email oder Passwort falsch</div>
+            </div>
         </div>
     {% endif %}
 {% endblock %}

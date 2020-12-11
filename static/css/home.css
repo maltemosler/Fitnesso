@@ -1,0 +1,38 @@
+#myVideo {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#login-menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#logo img{
+    width: 250px;
+    height: 250px;
+}
+
+#login {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#login-email, #login-password {
+    outline: 0;
+    border-width: 0 0 2px;
+    background-color: none;
+}
+
+#login-email:focus , #login-password: focus{
+    border-color: green;
+}
