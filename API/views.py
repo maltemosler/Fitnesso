@@ -1,5 +1,6 @@
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.db.models import Q
 from django.http import HttpResponseServerError, HttpResponse
 from django.shortcuts import render
 
@@ -56,14 +57,45 @@ def user_login(request):
         return HttpResponseServerError(status=403)
 
 
+def register(request):
+    email = request.POST.get("email", "").lower()
+    if not validations.validate_email(email):
+        return HttpResponseServerError("422-0")
+    password = request.POST.get("password", "")
+    if not validations.validate_password(password):
+        return HttpResponseServerError("422-1")
+    vorname = request.POST.get("vorname", "")
+    if not validations.validate_first_name(vorname):
+        return HttpResponseServerError("422-2")
+    nachname = request.POST.get("nachname", "")
+    if not validations.validate_last_name(nachname):
+        return HttpResponseServerError("422-3")
+
+    user, new = User.objects.get_or_create(username=email)
+    if not new:
+        print("user not new")
+        return HttpResponseServerError("409")
+    user.email = email
+    user.set_password(password)
+    user.save()
+
+    su = FitnessoUser.objects.create(user=user)
+    su.vorname = vorname
+    su.nachname = nachname
+    su.save()
+
+    return HttpResponse("200")
+
+
+def delete_user(request):
+    user_id = request.POST.get("user_id", "")
+    User.objects.filter(id=user_id).delete()
+    return HttpResponse("200")
+
+
 def user_anlegen_view(request):
     context = {'title': "Fitnesso | User anlegen"}
     return render(request, "user_anlegen.html", context=global_context(request, context))
-
-
-def user_verwalten_view(request):
-    context = {'title': "Fitnesso | User verwalten"}
-    return render(request, "user_verwalten.html", context=global_context(request, context))
 
 
 def tests(request):

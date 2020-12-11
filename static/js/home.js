@@ -1,7 +1,5 @@
-const login_error =$("#login-error");
-login_error.hide();
-
 function login() {
+    const login_error = $("#login-error");
 
     const email = $("#login-email").val();
     const password = $("#login-password").val();
@@ -24,4 +22,21 @@ function login() {
 
             });
     }
+}
+
+function delete_user(user_id) {
+
+    sendAJAX("delete_user", {
+            "user_id": user_id,
+        },
+        function () {
+            console.log("logged in");
+            sessionStorage.setItem('status', 'loggedIn');
+            location.reload();
+        }, function (status_code, message) {
+            console.log(status_code);
+            console.log(message);
+
+        });
+
 }

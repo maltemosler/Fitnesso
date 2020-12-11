@@ -1,21 +1,34 @@
+{% extends "frame.html" %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-        <h1>Nutzer anlegen</h1>
-        Vorname: <input id="login-email" type="text">
-        <br>
-        Nachname: <input id="login-email" type="text">
-         <br>
-        Login: <input id="login-email" type="text">
-        <br>
-        Password: <input id="login-password" type="password">
-        <br>
-        <button onclick="login()">Login</button>
-</body>
-</html>
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% if request.user.fitnessouser.is_trainer %}
+            <h1>Nutzer anlegen</h1>
+            <button onclick="location.href='/'">Zurück</button>
+            <br>
+            <br>
+            <br>
+            Email: <input id="register-email" type="text">
+            <br>
+            Password: <input id="register-password" type="password">
+            <br>
+
+            Vorname: <input id="register-vorname" type="text">
+            <br>
+            Nachname: <input id="register-nachname" type="text">
+            <br>
+            <br>
+            <br>
+
+            <button onclick="nutzer_anlegen()">Nutzer anlegen</button>
+            <div id="register-error" style="display:none">Email oder Passwort falsch</div>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static "js/user_anlegen.js" %}?v=1"></script>
+{% endblock %}
