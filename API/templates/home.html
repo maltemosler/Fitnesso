@@ -31,15 +31,24 @@
                 {% for unterziel in ziel.unterziele %}
                     {{ unterziel.id }}
                     {{ unterziel.ziel }} <br>
-                     {% endfor %}
+                {% endfor %}
             {% endfor %}
         </div>
     {% endif %}
 {% else %}
     <div>
         <h1>Login page</h1>
-
+        Login: <input id="login-email" type="text">
+        <br>
+        Password: <input id="login-password" type="password">
+        <br>
+        <button onclick="login()">Login</button>
+        <div id="login-error">Email oder Passwort falsch</div>
     </div>
 {% endif %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="{% static "js/home.js" %}?v=1"></script>
+
 </body>
 </html>

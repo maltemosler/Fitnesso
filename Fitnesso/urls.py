@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from API.views import home_view, tests
+from API.views import home_view, tests, user_login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('tests', tests),
     path('', home_view),
+
+    path('ajax/user_login/', user_login),
 ]
