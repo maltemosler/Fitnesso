@@ -5,7 +5,6 @@ from django.shortcuts import render
 
 from API.models import FitnessoUser, HauptZiel, Unterziel
 from API.tasks import validations
-from Fitnesso.decorators import only_ajax
 
 
 def global_context(request, context):

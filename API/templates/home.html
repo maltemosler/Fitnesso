@@ -14,12 +14,20 @@
     {% if request.user.fitnessouser.is_trainer %}
         <div>
             <h1>Alle Nutzer</h1>
-            {% for user in users %}
-                {{ user.user.id }}
-                {{ user.nachname }}
-                {{ user.vorname }}
-            {% endfor %}
-
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Nachname</td>
+                    <td>Vorname</td>
+                </tr>
+                {% for user in users %}
+                    <tr>
+                        <td style="color: green">{{ user.user.id }}</td>
+                        <td style="color: green">{{ user.nachname }}</td>
+                        <td style="color: green">{{ user.vorname }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         </div>
     {% else %}
         <div>
