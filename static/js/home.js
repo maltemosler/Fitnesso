@@ -15,11 +15,6 @@ function hauptziel_erstellen() {
 }
 
 
-
-
-
-
-
 function login() {
     const login_error = $("#login-error");
 
@@ -39,6 +34,7 @@ function login() {
                 sessionStorage.setItem('status', 'loggedIn');
                 location.reload();
             }, function (status_code, message) {
+                console.log("tjgwerz");
                 console.log(status_code);
                 console.log(message);
 

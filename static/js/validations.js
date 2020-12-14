@@ -1,7 +1,6 @@
 function validateEmail(email, error_element) {
     const validate_email = /^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test(email);
     if (validate_email) {
-        error_element.hide();
         return true;
     } else {
         error_element.show();
@@ -95,7 +94,7 @@ function validateSupportSubject(subject, error_element) {
         error_element.hide();
         return true
     } else {
-        error_element.text("Subject needs: "+ (10 - subject.length).toString() + " more letters!");
+        error_element.text("Subject needs: " + (10 - subject.length).toString() + " more letters!");
         error_element.show();
         return false
     }
@@ -112,7 +111,7 @@ function validateSupportMessage(message, error_element) {
     }
 }
 
-function validateVerificationCode(verification_code, error_element){
+function validateVerificationCode(verification_code, error_element) {
     if (16 === verification_code.length) {
         error_element.hide();
         return true
@@ -123,7 +122,7 @@ function validateVerificationCode(verification_code, error_element){
 }
 
 
-function validateInviteCode(verification_code, error_element){
+function validateInviteCode(verification_code, error_element) {
     if (16 >= verification_code.length > 0) {
         error_element.hide();
         return true

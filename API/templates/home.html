@@ -50,17 +50,22 @@
     {% else %}
         <div id="login">
             <video autoplay muted loop id="myVideo">
-                <source src="{% static "resources/fitness-motion-background.mp4" %}" type="video/mp4">
+                <source src="{% static 'resources/loginBackground2.mp4' %}" type="video/mp4">
                 Your browser does not support HTML5 video.
             </video>
             <div id="login-menu">
                 <div id="logo">
                     <img src="{% static "resources/companylogo.png" %}">
                 </div>
-                <input id="login-email" type="text">
-                <input id="login-password" type="password">
-                <button onclick="login()">Login</button>
-                <div id="login-error">Email oder Passwort falsch</div>
+                <div class="textbox">
+                    <input id="login-email" type="text" placeholder="Email">
+                </div>
+                <div class="textbox">
+                    <input id="login-password" type="password" placeholder="Password">
+                </div>
+                <button id="login-btn" onclick="login()">Login</button>
+
+                <div id="login-error" style="display: none;" >Email oder Passwort falsch</div>
             </div>
         </div>
     {% endif %}
