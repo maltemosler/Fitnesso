@@ -21,11 +21,12 @@ from django.urls import path
 
 from API.views import home_view, tests, user_login, user_anlegen_view, register, delete_user
 
+from API.views import hauptziel_erstellen, hauptziel_delete, unterziel_erstellen, unterziel_abschliessen, unterziel_delete
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('user_anlegen/', user_anlegen_view),
     path('register/', register),
-
 
     path('tests', tests),
     path('', home_view),
@@ -33,4 +34,11 @@ urlpatterns = [
     path('ajax/user_login/', user_login),
     path('ajax/register/', register),
     path('ajax/delete_user/', delete_user),
+
+    path('ajax/hauptziel_erstellen/', hauptziel_erstellen),
+    path('ajax/hauptziel_delete/', hauptziel_delete),
+
+    path('ajax/unterziel_erstellen/', unterziel_erstellen),
+    path('ajax/unterziel_abschliessen/', unterziel_abschliessen),
+    path('ajax/unterziel_delete/', unterziel_delete),
 ]
