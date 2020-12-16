@@ -1,4 +1,4 @@
-function sendAJAX(base_url, base_data, onsuccess, onfail, trys = 0) {
+function sendAJAX(base_url, base_data, onsuccess, onfail, error) {
     let data = {};
     if (typeof base_data != "undefined") {
         data = base_data;
@@ -11,9 +11,8 @@ function sendAJAX(base_url, base_data, onsuccess, onfail, trys = 0) {
         url: url,
         data: data
     }).done(onsuccess)
-    .fail(function (data) {
-        setTimeout(function () {
-            sendAJAX(base_url, base_data, onsuccess, onfail, trys, data['responseText']);
-        }, 1000);
-    });
+        .fail(function (data) {
+            console.log(data)
+            onfail(error);
+        });
 }
