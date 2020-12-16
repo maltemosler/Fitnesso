@@ -13,6 +13,6 @@ function sendAJAX(base_url, base_data, onsuccess, onfail, error) {
     }).done(onsuccess)
         .fail(function (data) {
             console.log(data)
-            onfail(error);
+            onfail(data['status'], data['responseText']);
         });
 }

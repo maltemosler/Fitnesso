@@ -9,21 +9,30 @@
             <button onclick="location.href='/'">Zurück</button>
             <br>
             <br>
+            Vorname: <input id="register-vorname" type="text">
+            <div id="register-error-vorname" style="display:none">Vorname ungültig</div>
+            <br>
+            Nachname: <input id="register-nachname" type="text">
+            <div id="register-error-nachname" style="display:none">Nachname ungültig</div>
             <br>
             Email: <input id="register-email" type="text">
+            <div id="register-error-email" style="display:none">Email ungültig</div>
             <br>
             Password: <input id="register-password" type="password">
             <br>
+            Repeat password: <input id="register-password-repeat" type="password">
 
-            Vorname: <input id="register-vorname" type="text">
+            <div id="register-error-password" style="display:none"></div>
+            <div id="register-error-password-repeat" style="display:none">Passwörter stimmen nicht übersien</div>
+            <div id="register-error-user_exist" style="display:none">Email existiert bereits</div>
             <br>
-            Nachname: <input id="register-nachname" type="text">
+
             <br>
             <br>
             <br>
 
             <button onclick="nutzer_anlegen()">Nutzer anlegen</button>
-            <div id="register-error" style="display:none">Email oder Passwort falsch</div>
+
         {% endif %}
     {% endif %}
 {% endblock %}
