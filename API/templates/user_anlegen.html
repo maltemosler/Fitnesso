@@ -5,8 +5,9 @@
 {% block content %}
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
+            <button onclick="location.href='/user_verwaltung'">Zurück</button>
             <h1>Nutzer anlegen</h1>
-            <button onclick="location.href='/'">Zurück</button>
+
             <br>
             <br>
             Vorname: <input id="register-vorname" type="text">

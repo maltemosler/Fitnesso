@@ -1,0 +1,43 @@
+{% extends "frame.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% if request.user.fitnessouser.is_trainer %}
+            <button onclick="location.href='/user_verwaltung'">Zurück</button>
+        {% endif %}
+
+        <div>
+            <h1>Ziele</h1>
+            <br>
+            <br>
+            Ziel: <input id="home-hauptziel" type="text">
+            <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
+            <br>
+            {% for ziel in ziele %}
+
+                <h3>{{ ziel.ziel }} ({{ ziel.id }})
+                    <button onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
+                </h3>
+                {% for unterziel in ziel.unterziele %}
+
+                    {% if unterziel.status %}
+                        {{ unterziel.ziel }}
+                    {% else %}
+                        {{ unterziel.ziel }}
+                        <button onclick="unterziel_abschliessen({{ unterziel.id }})">done</button>
+                    {% endif %}
+                    <button onclick="unterziel_delete({{ unterziel.id }})">delete</button><br>
+                {% endfor %}
+                <input id="home-unterziel-{{ ziel.id }}" type="text">
+                <button onclick="unterziel_erstellen({{ ziel.id }})">+</button>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static "js/ziele.js" %}?v=1"></script>
+{% endblock %}

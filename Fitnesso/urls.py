@@ -17,19 +17,20 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
-from API.views import home_view, tests, user_login, user_anlegen_view, register, delete_user
-
-from API.views import hauptziel_erstellen, hauptziel_delete, unterziel_erstellen, unterziel_abschliessen, unterziel_delete
+from API.views.user import register, user_login, delete_user, user_logout
+from API.views.views import home_view, tests, user_anlegen_view, ziele_view, user_verwaltung
+from API.views.ziele import hauptziel_erstellen, hauptziel_delete, unterziel_erstellen, unterziel_abschliessen, \
+    unterziel_delete
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', home_view),
+
+    path('user_verwaltung/', user_verwaltung),
     path('user_anlegen/', user_anlegen_view),
     path('register/', register),
-
-    path('tests', tests),
-    path('', home_view),
+    path('ziele/<user_id>', ziele_view),
 
     path('ajax/user_login/', user_login),
     path('ajax/register/', register),
@@ -41,4 +42,8 @@ urlpatterns = [
     path('ajax/unterziel_erstellen/', unterziel_erstellen),
     path('ajax/unterziel_abschliessen/', unterziel_abschliessen),
     path('ajax/unterziel_delete/', unterziel_delete),
+
+    path('tests', tests),
+    path('admin/', admin.site.urls),
+    path('user_logout', user_logout, name="user_logout"),
 ]

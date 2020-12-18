@@ -20,7 +20,7 @@ function nutzer_anlegen() {
             },
             function () {
                 console.log("register successfully");
-                location.href="/";
+                location.href="/user_verwaltung";
             }, function (status_code, message) {
                 if(message === "409"){
                     $("#register-error-user_exist").show()
@@ -28,3 +28,4 @@ function nutzer_anlegen() {
             });
     }
 }
+

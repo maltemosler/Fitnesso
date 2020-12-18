@@ -1,0 +1,38 @@
+{% extends "frame.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% if request.user.fitnessouser.is_trainer %}
+        <div>
+
+            <h1>Alle Nutzer</h1>
+            <button onclick="location.href='/user_anlegen'">Nutzer anlegen</button>
+            <table>
+                <tr>
+                    <td>ID</td>
+                    <td>Nachname</td>
+                    <td>Vorname</td>
+                    <td>delete</td>
+                </tr>
+                {% for user in users %}
+                    <tr>
+                        <td style="color: green">{{ user.user.id }}</td>
+                        <td style="color: green">{{ user.nachname }}</td>
+                        <td style="color: green">{{ user.vorname }}</td>
+                        <td>
+                            <button onclick="location.href='/ziele/{{ user.user.id }}'">Ziele</button>
+                            <button style="color: red" onclick="delete_user({{ user.user.id }})">DELETE</button>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% else %}
+    {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static "js/user_verwaltung.js" %}?v=1"></script>
+{% endblock %}

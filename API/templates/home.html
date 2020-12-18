@@ -4,50 +4,7 @@
 {% block content %}
     <link rel="stylesheet" href="{% static "css/home.css" %}">
 
-    {% if request.user.is_authenticated %}
-        {% if request.user.fitnessouser.is_trainer %}
-            <div>
-
-                <h1>Alle Nutzer</h1>
-                <button onclick="location.href='/user_anlegen'">Nutzer anlegen</button>
-                <table>
-                    <tr>
-                        <td>ID</td>
-                        <td>Nachname</td>
-                        <td>Vorname</td>
-                        <td>delete</td>
-                    </tr>
-                    {% for user in users %}
-                        <tr>
-                            <td style="color: green">{{ user.user.id }}</td>
-                            <td style="color: green">{{ user.nachname }}</td>
-                            <td style="color: green">{{ user.vorname }}</td>
-                            <td>
-                                <button style="color: red" onclick="delete_user({{ user.user.id }})">DELETE</button>
-                            </td>
-                        </tr>
-                    {% endfor %}
-                </table>
-            </div>
-        {% else %}
-            <div>
-                <h1>Ziele</h1>
-                <br>
-                <br>
-                Ziel: <input id="home-hauptziel" type="text">
-                <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
-                <br>
-                {% for ziel in ziele %}
-
-                    <h3>{{ ziel.ziel }} ({{ ziel.id }})</h3>
-                    {% for unterziel in ziel.unterziele %}
-                        {{ unterziel.id }}
-                        {{ unterziel.ziel }} <br>
-                    {% endfor %}
-                {% endfor %}
-            </div>
-        {% endif %}
-    {% else %}
+    {% if not request.user.is_authenticated %}
         <div id="login">
             <video autoplay muted loop id="myVideo">
                 <source src="{% static 'resources/loginBackground2.mp4' %}" type="video/mp4">
@@ -69,9 +26,9 @@
             </div>
         </div>
     {% endif %}
+
 {% endblock %}
 
 {% block scripts %}
     <script src="{% static "js/home.js" %}?v=1"></script>
-    <script src="{% static "js/ziele.js" %}?v=1"></script>
 {% endblock %}

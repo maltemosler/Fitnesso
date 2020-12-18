@@ -11,10 +11,16 @@ function login() {
                 "email": email,
                 "password": password,
             },
-            function () {
+            function (resp) {
                 console.log("logged in");
                 sessionStorage.setItem('status', 'loggedIn');
-                location.reload();
+
+                //  check if trainer - go to user verwaltung
+                if(resp.is_trainer === true){
+                    location.href="user_verwaltung"
+                } else {
+                    location.href="ziele/" + resp.user_id
+                }
             }, function (status_code, message) {
                 console.log("tjgwerz");
                 console.log(status_code);
@@ -22,19 +28,4 @@ function login() {
                 login_error.show()
             });
     }
-}
-
-function delete_user(user_id) {
-
-    sendAJAX("delete_user", {
-            "user_id": user_id,
-        },
-        function () {
-            location.reload();
-        }, function (status_code, message) {
-            console.log(status_code);
-            console.log(message);
-
-        });
-
 }

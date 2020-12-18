@@ -1,5 +1,5 @@
 from django.core.handlers.wsgi import WSGIRequest
-from django.http import Http404
+from django.http import Http404, HttpResponseServerError
 
 
 def only_ajax(func):
@@ -10,3 +10,14 @@ def only_ajax(func):
             raise Http404
 
     return wrapper
+
+
+def validate_user(view):
+    def _view(request: WSGIRequest, *args, **kwargs):
+        if request.user.fitnessouser.is_trainer or int(request.POST.get("user_id", "")) == int(request.user.id):
+            print("permitted user to change goal.")
+            return view(request, *args, **kwargs)
+        else:
+            print("validation failed")
+            return HttpResponseServerError()
+    return _view
