@@ -1,0 +1,39 @@
+#create-goals {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 3px solid #32140b;
+}
+
+.main-goal {
+    width: 30%;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 50px;
+    transition: 0.3s;
+}
+
+.main-goal:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-flow: wrap;
+}
+
+.goal-header {
+    text-align: center;
+    padding: 50px 10px;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
+    color: #32140b;
+}
+
+.minor-goal{
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 18px;
+}

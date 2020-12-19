@@ -3,7 +3,6 @@
 
 {% block content %}
     <link rel="stylesheet" href="{% static "css/home.css" %}">
-
     {% if not request.user.is_authenticated %}
         <div id="login">
             <video autoplay muted loop id="myVideo">
@@ -21,8 +20,9 @@
                     <input id="login-password" type="password" placeholder="Password">
                 </div>
                 <button id="login-btn" onclick="login()">Login</button>
-
-                <p id="login-error-text" style="display:none;">Email oder Passwort falsch</p>
+                <div id ="error-msg">
+                    <p id="login-error-text" style="display:none;">Email oder Passwort falsch</p>
+                </div>
             </div>
         </div>
     {% endif %}

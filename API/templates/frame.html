@@ -5,6 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{% static "css/frame.css" %}">
 </head>
 <body>
 <!-- Set up AJAX -->
@@ -16,8 +17,14 @@
 <script src="{% static "js/frame.js" %}?v=1"></script>
 
 {% if request.user.is_authenticated %}
-    todo: navbar (frame.html) :=)
-    <button onclick="window.location = '{% url "user_logout" %}';">Logut</button>
+    <div id="navbar">
+        <button id="logout-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
+    </div>
+
+    <div id="logo-nav">
+        <img src="{% static "resources/companylogo.png" %}" id ="logo-nav-menu">
+    </div>
+
 {% endif %}
 {% block content %}{% endblock %}
 
