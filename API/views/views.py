@@ -21,9 +21,6 @@ def user_verwaltung(request):
 
 
 def ziele_view(request, user_id):
-    print(user_id)
-    print(user_id)
-    print(user_id)
     ziele = []
     context = {'title': "Fitnesso | Ziele"}
     if request.user.is_authenticated:
@@ -37,7 +34,11 @@ def ziele_view(request, user_id):
             for unterziel in Unterziel.objects.filter(hauptziel=hauptziel):
                 unterziele.append({"id": unterziel.id, "ziel": unterziel.ziel, "status": unterziel.status})
             if not hauptziel.id in ziele:
-                ziele.append({"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele})
+                ziele.append(
+                    {"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele,
+                     "status": f"{Unterziel.objects.filter(hauptziel=hauptziel, status=True).count()}/{Unterziel.objects.filter(hauptziel=hauptziel).count()}"
+                     }
+                )
 
     context["ziele"] = ziele
     return render(request, "ziele.html", context=global_context(request, context))

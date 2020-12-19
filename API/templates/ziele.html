@@ -17,7 +17,7 @@
             <br>
             {% for ziel in ziele %}
 
-                <h3>{{ ziel.ziel }} ({{ ziel.id }})
+                <h3>{{ ziel.ziel }} ({{ ziel.status }})
                     <button onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
                 </h3>
                 {% for unterziel in ziel.unterziele %}
