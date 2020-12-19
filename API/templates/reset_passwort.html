@@ -1,0 +1,29 @@
+{% extends "frame.html" %}
+{% load static %}
+
+
+{% block content %}
+    {% if request.user.is_authenticated %}
+        {% if request.user.fitnessouser.is_trainer %}
+            <button onclick="location.href='/user_verwaltung'">Zurück</button>
+
+
+            <h1>Reset passwort from: {{ vorname }} {{ nachname }}</h1>
+            <br>
+            <br>
+            New Password: <input id="reset-new_password" type="password"> <br>
+            Confirm Password: <input id="reset-new_password-confirmation" type="password"> <br>
+            <button onclick="reset_password()">Reset Passwort</button>
+
+            <div id="register-error-password" style="display:none"></div>
+            <div id="register-error-password-repeat" style="display:none">Passwörter stimmen nicht übersien</div>
+            <br>
+
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static "js/reset_password.js" %}?v=1"></script>
+{% endblock %}

@@ -1,21 +1,19 @@
-function getGETParams() {
-    return location.href.substring(location.href.lastIndexOf('/') + 1)
-}
-
-
 function hauptziel_erstellen() {
     const ziel = $("#home-hauptziel").val();
+    const ziel_error = $("#hauptziel-create-error");
 
-    sendAJAX("hauptziel_erstellen", {
-            "user_id": getGETParams(),
-            "ziel": ziel,
-        },
-        function () {
-            location.reload();
-        }, function (status_code, message) {
-            console.log(status_code);
-            console.log(message);
-        });
+    if (validateZiel(ziel, ziel_error)) {
+        sendAJAX("hauptziel_erstellen", {
+                "user_id": getGETParams(),
+                "ziel": ziel,
+            },
+            function () {
+                location.reload();
+            }, function (status_code, message) {
+                console.log(status_code);
+                console.log(message);
+            });
+    }
 }
 
 function hauptziel_delete(ziel_id) {
@@ -33,20 +31,23 @@ function hauptziel_delete(ziel_id) {
 
 function unterziel_erstellen(hauptziel_id) {
     const tmp = "#home-unterziel-" + hauptziel_id
-    console.log(tmp);
+    const unterziel_error_tmp = "#unterziel-create-error-" + hauptziel_id
     const ziel = $(tmp).val();
 
-    sendAJAX("unterziel_erstellen", {
-            "user_id": getGETParams(),
-            "hauptziel_id": hauptziel_id,
-            "ziel": ziel,
-        },
-        function () {
-            location.reload();
-        }, function (status_code, message) {
-            console.log(status_code);
-            console.log(message);
-        });
+    const unterziel_error = $(unterziel_error_tmp);
+    if (validateZiel(ziel, unterziel_error)) {
+        sendAJAX("unterziel_erstellen", {
+                "user_id": getGETParams(),
+                "hauptziel_id": hauptziel_id,
+                "ziel": ziel,
+            },
+            function () {
+                location.reload();
+            }, function (status_code, message) {
+                console.log(status_code);
+                console.log(message);
+            });
+    }
 }
 
 function unterziel_abschliessen(unterziel_id) {
