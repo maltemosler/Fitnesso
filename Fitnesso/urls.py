@@ -31,7 +31,7 @@ urlpatterns = [
     path('user_anlegen/', user_anlegen_view),
     path('register/', register),
     path('ziele/<user_id>', ziele_view),
-    path('reset_passwort/<user_id>', reset_passwort_view),
+    path('reset_password/<user_id>', reset_passwort_view),
 
     path('ajax/user_login/', user_login),
     path('ajax/register/', register),

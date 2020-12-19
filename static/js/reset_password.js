@@ -4,7 +4,7 @@ function reset_password() {
 
     const validate_password = validatePassword(passwort, password_repeat, $("#register-error-password"), $("#register-error-password-repeat"));
     if (validate_password) {
-        sendAJAX("reset_passwort", {
+        sendAJAX("reset_password", {
                 "user_id": getGETParams(),
                 "new_password": passwort,
             },
