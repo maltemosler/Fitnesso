@@ -14,6 +14,7 @@
             <br>
             Ziel: <input id="home-hauptziel" type="text">
             <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
+            <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
             <br>
             {% for ziel in ziele %}
 
@@ -32,6 +33,7 @@
                 {% endfor %}
                 <input id="home-unterziel-{{ ziel.id }}" type="text">
                 <button onclick="unterziel_erstellen({{ ziel.id }})">+</button>
+                <div id="unterziel-create-error-{{ ziel.id }}" style="display:none">Ziel ungültig</div>
             {% endfor %}
         </div>
     {% endif %}
