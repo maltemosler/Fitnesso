@@ -1,0 +1,50 @@
+body, html {
+    margin: 0;
+}
+
+#navbar {
+    margin-top: 0px;
+    width: 100%;
+    overflow: hidden;
+    height: 80px;
+    background-color: #ADFF2F;
+    position: relative;
+    border-bottom: 3px solid #32140b;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#logo-nav{
+    display: flex;
+    justify-content: center;
+}
+
+#logo-nav-menu {
+    position: relative;
+    width: 200px;
+    margin-top: -120px;
+}
+
+#logout-btn{
+    background-color: #ADFF2F;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: #32140b;
+    padding-right: 10px;
+    border-left: 3px solid #32140b;
+}
+
+#logout-btn:hover{
+    background-color:#32140b;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: #ADFF2F;
+    padding-right: 10px;
+    border-left: 3px solid #32140b;
+}

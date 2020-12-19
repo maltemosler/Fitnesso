@@ -56,3 +56,7 @@
     cursor: pointer;
     margin: 12px 0;
 }
+
+#login-error-text{
+    color: red;
+}
