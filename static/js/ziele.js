@@ -1,8 +1,3 @@
-function getGETParams() {
-    return location.href.substring(location.href.lastIndexOf('/') + 1)
-}
-
-
 function hauptziel_erstellen() {
     const ziel = $("#home-hauptziel").val();
 

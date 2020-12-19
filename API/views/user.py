@@ -5,6 +5,7 @@ from django.http import HttpResponse, HttpResponseRedirect, HttpResponseServerEr
 
 from API.models import FitnessoUser
 from API.tasks import validations
+from Fitnesso.decorators import validate_user
 
 
 def register(request):
@@ -67,6 +68,22 @@ def user_logout(request):
     print("loguout")
     logout(request)
     return HttpResponseRedirect("/")
+
+
+@validate_user
+def reset_password(request):
+    user_id = request.POST.get("user_id", 0)
+    new_password = request.POST.get("new_password", "")
+
+    if request.user.is_authenticated:
+        if request.user.fitnessouser.is_trainer:
+            user = User.objects.get(id=user_id)
+            user.set_password(new_password)
+            user.save()
+
+            return HttpResponse("200")
+        return HttpResponse("403")
+    return HttpResponse("403")
 
 
 def delete_user(request):
