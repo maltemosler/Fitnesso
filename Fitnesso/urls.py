@@ -19,8 +19,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 
-from API.views.user import register, user_login, delete_user, user_logout
-from API.views.views import home_view, tests, user_anlegen_view, ziele_view, user_verwaltung
+from API.views.user import register, user_login, delete_user, user_logout, reset_password
+from API.views.views import home_view, tests, user_anlegen_view, ziele_view, user_verwaltung, reset_passwort_view
 from API.views.ziele import hauptziel_erstellen, hauptziel_delete, unterziel_erstellen, unterziel_abschliessen, \
     unterziel_delete
 
@@ -31,6 +31,7 @@ urlpatterns = [
     path('user_anlegen/', user_anlegen_view),
     path('register/', register),
     path('ziele/<user_id>', ziele_view),
+    path('reset_password/<user_id>', reset_passwort_view),
 
     path('ajax/user_login/', user_login),
     path('ajax/register/', register),
@@ -42,6 +43,8 @@ urlpatterns = [
     path('ajax/unterziel_erstellen/', unterziel_erstellen),
     path('ajax/unterziel_abschliessen/', unterziel_abschliessen),
     path('ajax/unterziel_delete/', unterziel_delete),
+
+    path('ajax/reset_password/', reset_password),
 
     path('tests', tests),
     path('admin/', admin.site.urls),

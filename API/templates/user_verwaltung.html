@@ -24,8 +24,11 @@
                         <td style="color: green">{{ user.user.id }}</td>
                         <td style="color: green">{{ user.nachname }}</td>
                         <td style="color: green">{{ user.vorname }}</td>
+                      
                         <td><button onclick="location.href='/ziele/{{ user.user.id }}'">Ziele</button></td>
+                        <td><button onclick="locationhref='/reset_password/{{ user.user.id }}'">RESET PASSWORT</button></td>
                         <td><button style="color: red" onclick="delete_user({{ user.user.id }})">DELETE</button></td>
+
                     </tr>
                 {% endfor %}
                 </tbody>

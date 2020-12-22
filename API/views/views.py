@@ -44,6 +44,17 @@ def ziele_view(request, user_id):
     return render(request, "ziele.html", context=global_context(request, context))
 
 
+def reset_passwort_view(request, user_id):
+    context = {'title': "Fitnesso | Ziele"}
+    if request.user.is_authenticated:
+        if request.user.fitnessouser.is_trainer:
+            user = FitnessoUser.objects.get(user_id=user_id)
+            context["vorname"] = user.vorname
+            context["nachname"] = user.nachname
+
+    return render(request, "reset_passwort.html", context=global_context(request, context))
+
+
 def user_anlegen_view(request):
     context = {'title': "Fitnesso | User anlegen"}
     return render(request, "user_anlegen.html", context=global_context(request, context))

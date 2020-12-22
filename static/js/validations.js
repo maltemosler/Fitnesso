@@ -69,62 +69,8 @@ function validateSecondName(name, error_element) {
     }
 }
 
-function validateSettingsInviteCode(invite_code, error_element) {
-    if (12 >= invite_code.length && invite_code.length >= 4) {
-        error_element.hide();
-        return true
-    } else {
-        error_element.show();
-        return false
-    }
-}
-
-
-function validateSettingsTradeUrl(trade_url, error_element) {
-    if (80 >= trade_url.length && trade_url.length >= 70) {
-        error_element.hide();
-        return true
-    } else {
-        error_element.show();
-        return false
-    }
-}
-
-function validateSupportSubject(subject, error_element) {
-    if (80 >= subject.length && subject.length >= 10) {
-        error_element.hide();
-        return true
-    } else {
-        error_element.text("Subject needs: " + (10 - subject.length).toString() + " more letters!");
-        error_element.show();
-        return false
-    }
-}
-
-function validateSupportMessage(message, error_element) {
-    if (5000 >= message.length && message.length >= 20) {
-        error_element.hide();
-        return true
-    } else {
-        error_element.text("Message needs: " + (20 - message.length).toString() + " more letters!");
-        error_element.show();
-        return false
-    }
-}
-
-function validateVerificationCode(verification_code, error_element) {
-    if (16 === verification_code.length) {
-        error_element.hide();
-        return true
-    } else {
-        error_element.show();
-        return false
-    }
-}
-
-
-function validateInviteCode(verification_code, error_element) {
-    if (16 >= verification_code.length > 0) {
+function validateZiel(ziel, error_element) {
+    if (128 >= ziel.length && ziel.length >= 2) {
         error_element.hide();
         return true
     } else {
