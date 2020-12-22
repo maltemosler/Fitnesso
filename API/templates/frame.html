@@ -18,9 +18,13 @@
 
 {% if request.user.is_authenticated %}
     <div id="navbar">
-        <button class="nav-btn" onclick="location.href='/user_anlegen'">Nutzer anlegen</button>
-        <button class="nav-btn" onclick="location.href='/user_verwaltung'">User Verwaltung</button>
-        <button class="nav-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
+        {% if request.user.fitnessouser.is_trainer %}
+            <button class="nav-btn" onclick="location.href='/user_anlegen'">Nutzer anlegen</button>
+            <button class="nav-btn" onclick="location.href='/user_verwaltung'">User Verwaltung</button>
+            <button class="nav-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
+        {% else %}
+            <button class="nav-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
+        {% endif %}
     </div>
 
     <div id="logo-nav">
