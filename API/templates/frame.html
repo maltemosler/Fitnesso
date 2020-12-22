@@ -18,7 +18,9 @@
 
 {% if request.user.is_authenticated %}
     <div id="navbar">
-        <button id="logout-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
+        <button class="nav-btn" onclick="location.href='/user_anlegen'">Nutzer anlegen</button>
+        <button class="nav-btn" onclick="location.href='/user_verwaltung'">User Verwaltung</button>
+        <button class="nav-btn" onclick="window.location = '{% url "user_logout" %}';">Logout</button>
     </div>
 
     <div id="logo-nav">
