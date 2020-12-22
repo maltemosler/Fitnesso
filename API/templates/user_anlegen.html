@@ -1,39 +1,64 @@
 {% extends "frame.html" %}
 {% load static %}
 
-
 {% block content %}
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
-            <button onclick="location.href='/user_verwaltung'">Zurück</button>
+        <link rel="stylesheet" href="{% static "css/create-user.css" %}">
+        <div id="content">
             <h1>Nutzer anlegen</h1>
+        <div id="form">
+            <div class="wrapper">
+                <div class = "input-data">
+                    <input id="register-vorname" type="text" required>
+                    <div class="underline"></div>
+                    <label>Vorname</label>
+                    <div id="register-error-vorname" style="display:none">Vorname ungültig</div>
+                </div>
+            </div>
 
-            <br>
-            <br>
-            Vorname: <input id="register-vorname" type="text">
-            <div id="register-error-vorname" style="display:none">Vorname ungültig</div>
-            <br>
-            Nachname: <input id="register-nachname" type="text">
-            <div id="register-error-nachname" style="display:none">Nachname ungültig</div>
-            <br>
-            Email: <input id="register-email" type="text">
-            <div id="register-error-email" style="display:none">Email ungültig</div>
-            <br>
-            Password: <input id="register-password" type="password">
-            <br>
-            Repeat password: <input id="register-password-repeat" type="password">
+            <div class="wrapper">
+                <div class = "input-data">
+                    <input id="register-nachname" type="text" required>
+                    <div class="underline"></div>
+                    <label>Nachname</label>
+                    <div id="register-error-nachname" style="display:none">Nachname ungültig</div>
+                </div>
+            </div>
 
-            <div id="register-error-password" style="display:none"></div>
-            <div id="register-error-password-repeat" style="display:none">Passwörter stimmen nicht übersien</div>
-            <div id="register-error-user_exist" style="display:none">Email existiert bereits</div>
-            <br>
+            <div class="wrapper">
+                <div class = "input-data">
+                    <input id="register-email" type="text" required>
+                    <div class="underline"></div>
+                    <label>Email</label>
+                    <div id="register-error-email" style="display:none">Email ungültig</div>
+                </div>
+            </div>
 
-            <br>
-            <br>
-            <br>
+            <div class="wrapper">
+                <div class = "input-data">
+                    <input id="register-password" type="password" required>
+                    <div class="underline"></div>
+                    <label>Password</label>
+                </div>
+            </div>
+
+            <div class="wrapper">
+                <div class = "input-data">
+                    <input id="register-password-repeat" type="password" required>
+                    <div class="underline"></div>
+                    <label>Repeat Password</label>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div id="register-error-password" style="display:none"></div>
+                <div id="register-error-password-repeat" style="display:none">Passwörter stimmen nicht übersien</div>
+                <div id="register-error-user_exist" style="display:none">Email existiert bereits</div>
+            </div>
+        </div>
 
             <button onclick="nutzer_anlegen()">Nutzer anlegen</button>
-
+        </div>
         {% endif %}
     {% endif %}
 {% endblock %}

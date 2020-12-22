@@ -1,5 +1,6 @@
 body, html {
     margin: 0;
+    font-family: sans-serif;
 }
 
 #navbar {
@@ -7,7 +8,7 @@ body, html {
     width: 100%;
     overflow: hidden;
     height: 80px;
-    background-color: #ADFF2F;
+    background-color: #32CD32;
     position: relative;
     border-bottom: 3px solid #32140b;
     display: flex;
@@ -25,8 +26,8 @@ body, html {
     margin-top: -120px;
 }
 
-#logout-btn{
-    background-color: #ADFF2F;
+.nav-btn{
+    background-color: #32CD32;
     border: none;
     text-align: center;
     text-decoration: none;
@@ -37,7 +38,7 @@ body, html {
     border-left: 3px solid #32140b;
 }
 
-#logout-btn:hover{
+.nav-btn:hover{
     background-color:#32140b;
     border: none;
     text-align: center;

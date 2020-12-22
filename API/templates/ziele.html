@@ -4,14 +4,13 @@
 {% block content %}
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
-            <button onclick="location.href='/user_verwaltung'">Zurück</button>
         {% endif %}
 
         <link rel="stylesheet" href="{% static "css/goals.css" %}">
 
         <div class = "content">
             <div id = "create-goals">
-                <h1>Ziele</h1>
+                <div id ="header"> Ziele </div>
                 <input id="home-hauptziel" type="text" placeholder="Hauptziel">
                 <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
             </div>
@@ -19,9 +18,12 @@
         <div class = "row">
             {% for ziel in ziele %}
             <div class = "main-goal">
-
-                <div class = "goal-header">{{ ziel.ziel }} ({{ ziel.status }})
-                    <button onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
+                <div class = "goal-header">
+                    <div class = "title"> {{ ziel.ziel }} </div>
+                    <button id="delete-goal-btn" onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
+                </div>
+                <div class="progress" data-label="50% Complete">
+                    <span class="value" style="width:50%;"></span>
                 </div>
                 <div class ="minor-goal">
                     {% for unterziel in ziel.unterziele %}
