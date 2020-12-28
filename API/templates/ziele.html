@@ -23,8 +23,8 @@
                     <div class = "title"> {{ ziel.ziel }} </div>
                     <button id="delete-goal-btn" onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
                 </div>
-                <div class="progress" data-label="50% Complete">
-                    <span class="value" style="width:50%;"></span>
+                <div class="progress" data-label="{{ ziel.status }}% Complete">
+                    <span class="value" style="width:{{ ziel.status }}%;"></span>
                 </div>
                 <div class ="minor-goal">
                     {% for unterziel in ziel.unterziele %}
@@ -44,7 +44,7 @@
             </div>
 
             {% endfor %}
-        </div>
+        </div>s
     {% endif %}
 {% endblock %}
 

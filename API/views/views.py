@@ -31,12 +31,19 @@ def ziele_view(request, user_id):
 
         for hauptziel in hauptziele:
             unterziele = []
+            goal_percent = 0
             for unterziel in Unterziel.objects.filter(hauptziel=hauptziel):
                 unterziele.append({"id": unterziel.id, "ziel": unterziel.ziel, "status": unterziel.status})
             if not hauptziel.id in ziele:
+                all_goals = Unterziel.objects.filter(hauptziel=hauptziel, status=True).count()
+                all_goals_done = Unterziel.objects.filter(hauptziel=hauptziel).count()
+
+                if all_goals != 0 and all_goals_done != 0:
+                    goal_percent = (all_goals / all_goals_done) * 100
+
                 ziele.append(
                     {"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele,
-                     "status": f"{Unterziel.objects.filter(hauptziel=hauptziel, status=True).count()}/{Unterziel.objects.filter(hauptziel=hauptziel).count()}"
+                     "status": goal_percent
                      }
                 )
 
