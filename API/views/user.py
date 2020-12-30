@@ -72,8 +72,12 @@ def user_logout(request):
 
 @validate_user
 def reset_password(request):
-    user_id = request.POST.get("user_id", 0)
-    new_password = request.POST.get("new_password", "")
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user_id id missing")
+    new_password = request.POST.get("new_password", None)
+    if not new_password:
+        return HttpResponseServerError("new_password missing")
 
     if request.user.is_authenticated:
         if request.user.fitnessouser.is_trainer:

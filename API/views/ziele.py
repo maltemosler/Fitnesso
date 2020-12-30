@@ -6,9 +6,11 @@ from Fitnesso.decorators import validate_user
 
 @validate_user
 def hauptziel_erstellen(request):
-    user_id = request.POST.get("user_id", "")
-    ziel = request.POST.get("ziel", "")
-    if ziel == "":
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user_id missing")
+    ziel = request.POST.get("ziel", None)
+    if not ziel:
         return HttpResponseServerError("ziel missing")
     HauptZiel.objects.create(user_id=user_id, ziel=ziel)
 
@@ -17,9 +19,11 @@ def hauptziel_erstellen(request):
 
 @validate_user
 def hauptziel_delete(request):
-    user_id = request.POST.get("user_id", "")
-    ziel_id = request.POST.get("ziel_id", "")
-    if ziel_id == "":
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user id missing")
+    ziel_id = request.POST.get("ziel_id", None)
+    if not ziel_id:
         return HttpResponseServerError("ziel id missing")
     HauptZiel.objects.filter(user_id=user_id, id=ziel_id).delete()
     return HttpResponse("200")
@@ -27,9 +31,15 @@ def hauptziel_delete(request):
 
 @validate_user
 def unterziel_erstellen(request):
-    user_id = request.POST.get("user_id", "")
-    ziel = request.POST.get("ziel", "")
-    hauptziel_id = request.POST.get("hauptziel_id", "")
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user_id missing")
+    ziel = request.POST.get("ziel", None)
+    if not ziel:
+        return HttpResponseServerError("ziel missing")
+    hauptziel_id = request.POST.get("hauptziel_id", None)
+    if not hauptziel_id:
+        return HttpResponseServerError("hauptziel id missing")
 
     hauptziel = HauptZiel.objects.get(id=hauptziel_id, user_id=user_id)
     Unterziel.objects.create(hauptziel=hauptziel, ziel=ziel)
@@ -38,8 +48,12 @@ def unterziel_erstellen(request):
 
 @validate_user
 def unterziel_abschliessen(request):
-    user_id = request.POST.get("user_id", "")
-    unterziel_id = request.POST.get("unterziel_id", "")
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user_id missing")
+    unterziel_id = request.POST.get("unterziel_id", None)
+    if not unterziel_id:
+        return HttpResponseServerError("unterziel id missing")
 
     uz = Unterziel.objects.get(id=unterziel_id)
 
@@ -52,8 +66,12 @@ def unterziel_abschliessen(request):
 
 @validate_user
 def unterziel_delete(request):
-    user_id = request.POST.get("user_id", "")
-    unterziel_id = request.POST.get("unterziel_id", "")
+    user_id = request.POST.get("user_id", None)
+    if not user_id:
+        return HttpResponseServerError("user_id missing")
+    unterziel_id = request.POST.get("unterziel_id", None)
+    if not unterziel_id:
+        return HttpResponseServerError("unterziel id missing")
 
     uz = Unterziel.objects.get(id=unterziel_id)
 
