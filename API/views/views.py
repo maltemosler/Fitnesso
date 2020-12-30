@@ -39,7 +39,7 @@ def ziele_view(request, user_id):
                 all_goals_done = Unterziel.objects.filter(hauptziel=hauptziel).count()
 
                 if all_goals != 0 and all_goals_done != 0:
-                    goal_percent = (all_goals / all_goals_done) * 100
+                    goal_percent = int((all_goals / all_goals_done) * 100)
 
                 ziele.append(
                     {"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele,

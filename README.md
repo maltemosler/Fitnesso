@@ -1,9 +1,12 @@
-# Fitnesso
-Uni projekt
+# Fitnesso 1.0
 
+# Dokumentation
 
+### Installation
 
-Setup
+You need to install Python3.6 or higher to run this application. After installing python you can follow the steps below
+
+##### Setup
 
     pip install django -U
     
@@ -16,3 +19,8 @@ Setup
 Run:
 
     python manage.py runserver localhost:8080
+
+## Testkonzept:
+
+Backend:
+Frontend:

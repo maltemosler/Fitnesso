@@ -8,7 +8,8 @@ from Fitnesso.decorators import validate_user
 def hauptziel_erstellen(request):
     user_id = request.POST.get("user_id", "")
     ziel = request.POST.get("ziel", "")
-
+    if ziel == "":
+        return HttpResponseServerError("ziel missing")
     HauptZiel.objects.create(user_id=user_id, ziel=ziel)
 
     return HttpResponse("200")
@@ -18,7 +19,8 @@ def hauptziel_erstellen(request):
 def hauptziel_delete(request):
     user_id = request.POST.get("user_id", "")
     ziel_id = request.POST.get("ziel_id", "")
-
+    if ziel_id == "":
+        return HttpResponseServerError("ziel id missing")
     HauptZiel.objects.filter(user_id=user_id, id=ziel_id).delete()
     return HttpResponse("200")
 
