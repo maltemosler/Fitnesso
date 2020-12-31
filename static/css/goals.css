@@ -5,10 +5,82 @@
     border-bottom: 3px solid #32140b;
 }
 
-#header {
+h1{
     text-decoration: underline;
-    font-size: 50px;
-    padding-bottom: 5px;
+}
+
+.wrapper{
+  width: 400px;
+  background: #fff;
+  padding: 30px;
+}
+
+.wrapper .input-data{
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .input-data input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+  outline: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #32CD32;
+}
+
+.wrapper .input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #32CD32;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scaleX(1);
+}
+
+#content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#form {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
 }
 
 .main-goal {
@@ -57,7 +129,7 @@
     font-size: 0.8em;
     position: absolute;
     text-align: center;
-     top: 5px;
+    top: 5px;
     left: 0;
     right: 0;
 }
@@ -87,3 +159,55 @@
     font-size: 50px;
     text-decoration: underline;
 }
+
+#hauptziel-create-error{
+    color: red;
+    font-size: 20px;
+}
+
+#btn{
+  display: block;
+  width: 400px;
+  height: 40px;
+  margin-left: 30px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+}
+
+#btn span{
+  position: relative;
+  z-index: 2;
+}
+
+#btn:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #32CD32;
+  transition: all .35s;
+}
+
+#btn:hover{
+  color: #32140b;
+}
+
+#btn:hover:after{
+  width: 100%;
+}
+
+
+
+
+
+

@@ -10,10 +10,20 @@
 
         <div class = "content">
             <div id = "create-goals">
-                <div id ="header"> Ziele </div>
-                <input id="home-hauptziel" type="text" placeholder="Hauptziel">
-                <button onclick="hauptziel_erstellen()">Hauptziel erstellen</button>
-                 <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
+                <h1>Ziele</h1>
+                <div id="form">
+                    <div class="wrapper">
+                        <div class = "input-data">
+                        <input id="home-hauptziel" type="text" required>
+                            <div class="underline"></div>
+                            <label>Hauptziel erstellen</label>
+                             <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
+                        </div>
+                    </div>
+                    <button id="btn" onclick="hauptziel_erstellen()">
+                        <span>Hauptziel erstellen</span>
+                    </button>
+                </div>
             </div>
         </div>
         <div class = "row">
