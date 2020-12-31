@@ -1,5 +1,22 @@
 # Fitnesso 1.0
-## Dokumentation (Englisch + Deutsch (Denglisch))
+
+##### Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys:
+
+    ./Kommentare/Entwurf
+
+##### Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung:
+
+    ./Kommentare/Kommentierung-Prototypen
+
+##### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster:
+
+    ./Kommentare/Kommentierung-Umsetzung
+
+##### Erstellen ein Usability-Testkonzept für die Anwendung:
+
+    ./Kommentare/Usability-Testkonzept
+
+## Dokumentation:
 
 **Table of Contents**
 
@@ -9,7 +26,8 @@
 - [Unit-Tests](#unit-tests)
   * [Backend](#backend)
   * [Frontend](#frontend)
-- [How does the code works?](#sourcecode)
+- [Wie funktioniert der Code?](#sourcecode)
+
 
 ## Framework:
 
@@ -60,6 +78,6 @@ Die tests sind zu finden bei: static/js/tests.js
 
 http://127.0.0.1:8000/tests/-1
 
-#### Sourcecode:
+## Sourcecode:
 
 https://gist.githubusercontent.com/jonschlinkert/ac5d8122bfaaa394f896/raw/bd1106691cf344e972f575c49ba3cf281beeb9b3/markdown-toc_repeated-headings.md
