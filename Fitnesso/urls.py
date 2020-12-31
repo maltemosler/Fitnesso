@@ -46,7 +46,7 @@ urlpatterns = [
 
     path('ajax/reset_password/', reset_password),
 
-    path('tests', tests),
+    path('tests/<user_id>', tests),
     path('admin/', admin.site.urls),
     path('user_logout', user_logout, name="user_logout"),
 ]

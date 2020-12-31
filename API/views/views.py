@@ -8,7 +8,6 @@ def global_context(request, context):
 
 def home_view(request):
     context = {'title': "Fitnesso | Home"}
-
     return render(request, "home.html", context=global_context(request, context))
 
 
@@ -67,6 +66,6 @@ def user_anlegen_view(request):
     return render(request, "user_anlegen.html", context=global_context(request, context))
 
 
-def tests(request):
+def tests(request, user_id):
     context = {'title': "Fitnesso | Tests"}
     return render(request, "tests.html", context=global_context(request, context))

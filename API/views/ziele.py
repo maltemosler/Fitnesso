@@ -25,7 +25,10 @@ def hauptziel_delete(request):
     ziel_id = request.POST.get("ziel_id", None)
     if not ziel_id:
         return HttpResponseServerError("ziel id missing")
-    HauptZiel.objects.filter(user_id=user_id, id=ziel_id).delete()
+    z = HauptZiel.objects.filter(user_id=user_id, id=ziel_id)
+    if not z.exists():
+        return HttpResponseServerError("hauptziel id does not exist")
+    z.delete()
     return HttpResponse("200")
 
 

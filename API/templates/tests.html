@@ -8,7 +8,29 @@
     <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-1.22.0.css">
     <script src="https://code.jquery.com/qunit/qunit-1.22.0.js"></script>
 
+    Things neccessary for test: <br>
+
+    <!-- Set up AJAX -->
+    {% csrf_token %}
+
+    <input id="home-hauptziel" type="text" placeholder="Hauptziel">
+    <input id="home-unterziel--1" type="text" placeholder="Unterziel">
+    <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
+    <div id="unterziel-create-error--1" style="display:none">Ziel ungültig</div>
+
+    <br>
+    <br>
+    <br>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{% static "js/frame.js" %}?v=1"></script>
+    <script src="{% static "js/ajax.js" %}?v=1"></script>
+    <script src="{% static "js/home.js" %}?v=1"></script>
+    <script src="{% static "js/ziele.js" %}?v=1"></script>
     <script src="{% static "js/tests.js" %}?v=1"></script>
+    <script src="{% static "js/user_anlegen.js" %}?v=1"></script>
+    <script src="{% static "js/user_verwaltung.js" %}?v=1"></script>
+    <script src="{% static "js/validations.js" %}?v=1"></script>
 </head>
 <body>
 
