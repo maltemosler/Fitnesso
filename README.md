@@ -28,13 +28,18 @@ Unser Testkonzept sieht Backend und Frontend tests vor.
 #### Backend:
 
 Um die Schnitstellen zu testen werden Daten benötigt. 
-Aus diesem Grund wird eine Datenbank "gemockt", also eine temporäre Datenbank erstellt welche Test Daten enthält und nur während des tests verfügbar ist.
+Aus diesem Grund wird eine Datenbank "gemockt", also eine temporäre Datenbank erstellt welche Test Daten enthält und nur während des Tests verfügbar ist.
 
-Jede Schnittstellen wird mit mindestens zwei tests getestet. Ein Test welcher falsche daten sendet und damit ein ServerError hervorruft und einer welcher richtige Daten sendet und somit schaut ob der HTTP Response Code 200 ist.
+Jede Schnittstellen wird mit mindestens zwei tests getestet. Ein Test welcher falsche Daten sendet und damit ein ServerError hervorruft und einer welcher richtige Daten sendet und somit schaut ob der HTTP Response Code 200 ist.
 
 Die tests sind zu finden bei: API/tests.py
 
 
 #### Frontend:
 
+Da die Schnittstellen bereits im Backend getestet werden, wird nur getestet, ob die Javascript Validation erfolgreich ist oder nicht.
+
+Da hier nur dummy Werte eingesetzt werden, wird die antwort des Servers ignoriert.
+
 Die tests sind zu finden bei: static/js/tests.js
+
