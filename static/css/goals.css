@@ -81,6 +81,9 @@ h1{
 #form {
     box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .main-goal {
@@ -169,7 +172,6 @@ h1{
   display: block;
   width: 400px;
   height: 40px;
-  margin-left: 30px;
   line-height: 40px;
   font-size: 18px;
   font-family: sans-serif;
