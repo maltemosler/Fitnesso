@@ -20,11 +20,17 @@
                     <input id="login-password" type="password" placeholder="Password">
                 </div>
                 <button id="login-btn" onclick="login()">Login</button>
-                <div id ="error-msg">
+                <div id="error-msg">
                     <p id="login-error-text" style="display:none;">Email oder Passwort falsch</p>
                 </div>
             </div>
         </div>
+    {% else %}
+        {% if not request.user.is_trainer %}
+            <script>location.href = "/user_verwaltung/"</script>
+        {% else %}
+            <script>location.href = "/ziele/"</script>
+        {% endif %}
     {% endif %}
 
 {% endblock %}
