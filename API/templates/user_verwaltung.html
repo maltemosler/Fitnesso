@@ -8,16 +8,19 @@
         <div id="content">
 
             <h1>Alle Nutzer</h1>
+            <input id="search-user" type="text">
+            <button onclick=user_filter()>FIND</button>
+            <div id="user-verwaltung-search-error" style="display:none; color: red;">Kann Nutzer nicht finden!</div>
             <table class="content-table">
                 <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nachname</th>
-                        <th>Vorname</th>
-                        <th>Goals</th>
-                        <th>Reset Password</th>
-                        <th>Delete</th>
-                    </tr>
+                <tr>
+                    <th>ID</th>
+                    <th>Nachname</th>
+                    <th>Vorname</th>
+                    <th>Goals</th>
+                    <th>Reset Password</th>
+                    <th>Delete</th>
+                </tr>
                 </thead>
                 <tbody>
                 {% for user in users %}
@@ -25,10 +28,19 @@
                         <td style="color: green">{{ user.user.id }}</td>
                         <td style="color: green">{{ user.nachname }}</td>
                         <td style="color: green">{{ user.vorname }}</td>
-                      
-                        <td><button onclick="location.href='/ziele/{{ user.user.id }}'"><i class="far fa-list-alt"></i></button></td>
-                        <td><button onclick="location.href='/reset_password/{{ user.user.id }}'"><i class="fas fa-undo"></i></button></td>
-                        <td><button style="color: red" onclick="delete_user({{ user.user.id }})"><i class="far fa-trash-alt"></i></button></td>
+
+                        <td>
+                            <button onclick="location.href='/ziele/{{ user.user.id }}'"><i class="far fa-list-alt"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <button onclick="location.href='/reset_password/{{ user.user.id }}'"><i
+                                    class="fas fa-undo"></i></button>
+                        </td>
+                        <td>
+                            <button style="color: red" onclick="delete_user({{ user.user.id }})"><i
+                                    class="far fa-trash-alt"></i></button>
+                        </td>
 
                     </tr>
                 {% endfor %}

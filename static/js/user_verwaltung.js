@@ -12,3 +12,12 @@ function delete_user(user_id) {
         });
 
 }
+
+function user_filter() {
+    const result = find(($('#search-user').val()));
+    if (result){
+        $('#user-verwaltung-search-error').hide();
+    } else {
+        $('#user-verwaltung-search-error').show();
+    }
+}
