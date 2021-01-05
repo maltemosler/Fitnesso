@@ -17,6 +17,7 @@
                     <th>ID</th>
                     <th>Nachname</th>
                     <th>Vorname</th>
+                    <th>Goals Percent</th>
                     <th>Goals</th>
                     <th>Reset Password</th>
                     <th>Delete</th>
@@ -28,6 +29,8 @@
                         <td style="color: green">{{ user.user.id }}</td>
                         <td style="color: green">{{ user.nachname }}</td>
                         <td style="color: green">{{ user.vorname }}</td>
+
+                        <td style="color: green">50%</td>
 
                         <td>
                             <button onclick="location.href='/ziele/{{ user.user.id }}'"><i class="far fa-list-alt"></i>
