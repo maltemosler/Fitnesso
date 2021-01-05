@@ -92,5 +92,6 @@ def reset_password(request):
 
 def delete_user(request):
     user_id = request.POST.get("user_id", "")
-    User.objects.filter(id=user_id).delete()
+    if str(user_id) != str(request.user.id):
+        User.objects.filter(id=user_id).delete()
     return HttpResponse("200")
