@@ -16,6 +16,24 @@ def user_verwaltung(request):
     if request.user.is_authenticated:
         if request.user.fitnessouser.is_trainer:
             context["users"] = FitnessoUser.objects.filter()
+
+    # calculate total goals percentage
+    i = 0
+    for user in context["users"]:
+        j = 0
+        goal_reached = 0
+        for unterziel in Unterziel.objects.filter(hauptziel__user=user):
+            j += 1
+
+            if unterziel.status:
+                goal_reached += 1
+
+        if goal_reached != 0:
+            context["users"][i].total_goal_percentage = int(goal_reached / j * 100)
+        else:
+            context["users"][i].total_goal_percentage = 0
+        i += 1
+
     return render(request, "user_verwaltung.html", context=global_context(request, context))
 
 
