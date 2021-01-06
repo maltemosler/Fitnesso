@@ -2,11 +2,14 @@ h1{
     text-decoration: underline;
 }
 
+td, th{
+    text-align: center;
+}
+
 .content-table {
   border-collapse: collapse;
   margin: 25px 0;
-  font-size: 0.9em;
-  min-width: 400px;
+  min-width: 75%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
@@ -21,7 +24,7 @@ h1{
 
 .content-table th,
 .content-table td {
-  padding: 12px 15px;
+  padding: 17px 20px;
 }
 
 .content-table tbody tr {
@@ -48,6 +51,151 @@ h1{
     flex-direction: column;
 }
 
-td{
+.progress {
+  height: 1.5em;
+  width: 100%;
+  background-color: #c9c9c9;
+  position: relative;
+}
+
+.progress:before {
+    content: attr(data-label);
+    font-size: 0.8em;
+    position: absolute;
     text-align: center;
+    top: 5px;
+    left: 0;
+    right: 0;
+}
+
+.progress .value {
+    background-color: green;
+    display: inline-block;
+    height: 100%;
+}
+
+#form {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    display: flex;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper{
+  width: 400px;
+  background: #fff;
+  padding: 30px;
+}
+
+.wrapper .input-data{
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.wrapper .input-data input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+  outline: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.input-data input:focus ~ label,
+.input-data input:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #32CD32;
+}
+
+.wrapper .input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.input-data .underline{
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+}
+
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #32CD32;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before{
+  transform: scaleX(1);
+}
+
+#btn{
+  display: block;
+  width: 400px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: sans-serif;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  transition: all .35s;
+  outline:none;
+}
+
+#btn span{
+  position: relative;
+  z-index: 2;
+}
+
+#btn:after{
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: #32CD32;
+  transition: all .35s;
+}
+
+#btn:hover{
+  color: #32140b;
+}
+
+#btn:hover:after{
+  width: 100%;
+}
+
+.btn-hidden{
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.btn-hidden:hover{
+    transition: all .2s ease;
+    transform: scale(1.5);
 }

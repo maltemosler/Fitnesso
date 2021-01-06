@@ -182,6 +182,7 @@ h1{
   text-align: center;
   position: relative;
   transition: all .35s;
+  outline:none;
 }
 
 #btn span{
@@ -206,6 +207,21 @@ h1{
 
 #btn:hover:after{
   width: 100%;
+}
+
+.btn-hidden{
+    width: 30px;
+    height: 30px;
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    outline: none;
+}
+
+.btn-hidden:hover{
+    transition: all .2s ease;
+    transform: scale(1.5);
 }
 
 
