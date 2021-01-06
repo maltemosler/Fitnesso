@@ -92,6 +92,7 @@ h1{
   text-align: center;
   position: relative;
   transition: all .35s;
+  outline:none;
 }
 
 #btn span{

@@ -43,12 +43,12 @@
                         {{ unterziel.ziel }}
                     {% else %}
                         {{ unterziel.ziel }}
-                        <button onclick="unterziel_abschliessen({{ unterziel.id }})"><i class="far fa-check-square"></i></button>
+                        <button class="btn-hidden" onclick="unterziel_abschliessen({{ unterziel.id }})"><i class="far fa-check-square fa-lg"></i></button>
                     {% endif %}
-                    <button onclick="unterziel_delete({{ unterziel.id }})"><i class="far fa-minus-square"></i></button><br>
+                    <button class="btn-hidden" onclick="unterziel_delete({{ unterziel.id }})"><i class="far fa-minus-square fa-lg"></i></button><br>
                 {% endfor %}
                 <input id="home-unterziel-{{ ziel.id }}" type="text">
-                <button onclick="unterziel_erstellen({{ ziel.id }})"><i class="far fa-plus-square"></i></button>
+                <button class="btn-hidden" onclick="unterziel_erstellen({{ ziel.id }})"><i class="far fa-plus-square fa-lg"></i></button>
                 <div id="unterziel-create-error-{{ ziel.id }}" style="display:none">Ziel ungültig</div>
                 </div>
             </div>
