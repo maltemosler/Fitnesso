@@ -8,7 +8,7 @@ body, html {
     width: 100%;
     overflow: hidden;
     height: 80px;
-    background-color: #32CD32;
+    background-color: #9bda9b;
     position: relative;
     border-bottom: 3px solid #32140b;
     display: flex;
@@ -27,7 +27,7 @@ body, html {
 }
 
 .nav-btn {
-    background-color: #32CD32;
+    background-color: #9bda9b;
     border: none;
     text-align: center;
     text-decoration: none;
