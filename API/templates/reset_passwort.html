@@ -5,35 +5,38 @@
 {% block content %}
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
-        <link rel="stylesheet" href="{% static "css/create-user.css" %}">
-        <div id="content">
-            <h1>Reset passwort from: {{ vorname }} {{ nachname }}</h1>
-            <div id="form">
-                <div class="wrapper">
-                    <div class = "input-data">
-                        <input id="reset-new_password" type="password" required>
-                        <div class="underline"></div>
-                        <label>New Password</label>
-                    </div>
-                </div>
+            <link rel="stylesheet" href="{% static "css/create-user.css" %}">
+            <div id="content">
 
-                <div class="wrapper">
-                    <div class = "input-data">
-                        <input id="reset-new_password-confirmation" type="password" required>
-                        <div class="underline"></div>
-                        <label>Confirm Password</label>
+                <div id="form">
+                    <h1>Reset passwort from: <br></h1><h3>{{ vorname }} {{ nachname }}</h3>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input id="reset-new_password" type="password" required>
+                            <div class="underline"></div>
+                            <label>New Password</label>
+                        </div>
                     </div>
-                </div>
 
-                <button id="btn" onclick="reset_password()">
-                    <span> Reset Passwort </span>
-                </button>
-                <div class="wrapper">
-                    <div id="register-error-password" style="display:none;color:red;"></div>
-                    <div id="register-error-password-repeat" style="display:none;color:red;">Passwörter stimmen nicht überein</div>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input id="reset-new_password-confirmation" type="password" required>
+                            <div class="underline"></div>
+                            <label>Confirm Password</label>
+                        </div>
+                    </div>
+
+                    <button id="btn" onclick="reset_password()">
+                        <span> Reset Passwort </span>
+                    </button>
+                    <div class="wrapper">
+                        <div id="register-error-password" style="display:none;color:red;"></div>
+                        <div id="register-error-password-repeat" style="display:none;color:red;">Passwörter stimmen
+                            nicht überein
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
 
         {% endif %}
     {% endif %}
