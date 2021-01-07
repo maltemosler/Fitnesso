@@ -99,6 +99,7 @@ body{
     border: 1px solid #ccc;
     margin-bottom: 50px;
     transition: 0.3s;
+    height: fit-content;
 }
 
 .main-goal:hover {
