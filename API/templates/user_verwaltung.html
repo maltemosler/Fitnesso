@@ -3,67 +3,72 @@
 
 
 {% block content %}
-    {% if request.user.fitnessouser.is_trainer %}
-        <link rel="stylesheet" href="{% static "css/manage-user.css" %}">
-        <div id="content">
-            <div id="form">
-                <h1>Alle Nutzer</h1>
-                 <div class="wrapper">
-                    <div class="input-data">
-                        <input id="search-user" type="text" required>
-                        <div class="underline"></div>
-                        <label>Suche Nutzer</label>
-                        <div id="user-verwaltung-search-error" style="display:none; color: red;">Kann Nutzer nicht finden!</div>
-                    </div>
-                 </div>
-                <button id="btn" onclick=user_filter()>
-                    <span>FIND</span>
-                </button>
-            </div>
-            <table class="content-table">
-                <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nachname</th>
-                    <th>Vorname</th>
-                    <th>Goals Percent</th>
-                    <th>Goals</th>
-                    <th>Reset Password</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for user in users %}
-                    <tr>
-                        <td style="color: green">{{ user.user.id }}</td>
-                        <td style="color: green">{{ user.nachname }}</td>
-                        <td style="color: green">{{ user.vorname }}</td>
-                        <td>
-                            <div class="progress" data-label="{{ user.total_goal_percentage }}%">
-                                <span class="value" style="width:{{ user.total_goal_percentage }}%"></span>
+    {% if request.user.is_authenticated %}
+        {% if request.user.fitnessouser.is_trainer %}
+            <link rel="stylesheet" href="{% static "css/manage-user.css" %}">
+            <div id="content">
+                <div id="form">
+                    <h1>Alle Nutzer</h1>
+                    <div class="wrapper">
+                        <div class="input-data">
+                            <input id="search-user" type="text" required>
+                            <div class="underline"></div>
+                            <label>Suche Nutzer</label>
+                            <div id="user-verwaltung-search-error" style="display:none; color: red;">Kann Nutzer nicht
+                                finden!
                             </div>
-                        </td>
-                        <td>
-                            <button class="btn-hidden" onclick="location.href='/ziele/{{ user.user.id }}'">
-                                <i class="far fa-list-alt fa-2x"></i>
-                            </button>
-                        </td>
-                        <td>
-                            <button class="btn-hidden" onclick="location.href='/reset_password/{{ user.user.id }}'">
-                                <i class="fas fa-undo fa-2x "></i></button>
-                        </td>
-                        <td>
-                            <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">
-                                <i class="far fa-trash-alt fa-2x"></i>
-                            </button>
-                        </td>
-
+                        </div>
+                    </div>
+                    <button id="btn" onclick=user_filter()>
+                        <span>FIND</span>
+                    </button>
+                </div>
+                <table class="content-table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nachname</th>
+                        <th>Vorname</th>
+                        <th>Goals Percent</th>
+                        <th>Goals</th>
+                        <th>Reset Password</th>
+                        <th>Delete</th>
                     </tr>
-                {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td style="color: green">{{ user.user.id }}</td>
+                            <td style="color: green">{{ user.nachname }}</td>
+                            <td style="color: green">{{ user.vorname }}</td>
+                            <td>
+                                <div class="progress" data-label="{{ user.total_goal_percentage }}%">
+                                    <span class="value" style="width:{{ user.total_goal_percentage }}%"></span>
+                                </div>
+                            </td>
+                            <td>
+                                <button class="btn-hidden" onclick="location.href='/ziele/{{ user.user.id }}'">
+                                    <i class="far fa-list-alt fa-2x"></i>
+                                </button>
+                            </td>
+                            <td>
+                                <button class="btn-hidden" onclick="location.href='/reset_password/{{ user.user.id }}'">
+                                    <i class="fas fa-undo fa-2x "></i></button>
+                            </td>
+                            <td>
+                                <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">
+                                    <i class="far fa-trash-alt fa-2x"></i>
+                                </button>
+                            </td>
+
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% endif %}
     {% else %}
+        <script>location.href = "/"</script>
     {% endif %}
 {% endblock %}
 
