@@ -1,6 +1,6 @@
 body{
     background-color: #ffffff;
-    background-image: url("/static/resources/Parabolic-Triangle.svg");
+    background-image: url("/static/resources/Pattern-Randomized.svg");
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top left;
@@ -24,7 +24,7 @@ td, th{
 }
 
 .content-table thead tr {
-  background-color: #32CD32;
+  background-color: #9bda9b;
   color: #ffffff;
   text-align: left;
   font-weight: bold;
