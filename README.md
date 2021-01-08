@@ -1,5 +1,7 @@
 # Fitnesso 1.0
 
+Kann removed werden wenn in Readme aufgenommen:
+
 ##### Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys:
 
     ./Kommentare/Entwurf
@@ -19,6 +21,12 @@
 ## Dokumentation:
 
 **Table of Contents**
+
+- [Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys](#todo)
+- [Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung](#todo)
+- [Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster](#todo)
+- [Erstellen ein Usability-Testkonzept für die Anwendung](#todo)
+
 
 - [Framework](#framework)
 - [Installation](#installation)
