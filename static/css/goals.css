@@ -100,6 +100,8 @@ body{
     margin-bottom: 50px;
     transition: 0.3s;
     height: fit-content;
+    max-width: 600px;
+    min-width: 400px;
 }
 
 .main-goal:hover {
@@ -230,6 +232,24 @@ body{
 .btn-hidden:hover{
     transition: all .2s ease;
     transform: scale(1.5);
+}
+
+.minor-goal-table {
+    width: 100%;
+    text-align: left;
+    table-layout: fixed;
+    border-bottom: 1px solid;
+}
+
+th, td {
+  width: 100px;
+  overflow: hidden;
+}
+
+.create-new-minor-goal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
