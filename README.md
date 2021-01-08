@@ -1,20 +1,5 @@
 # Fitnesso 1.0
 
-Kann removed werden wenn in Readme aufgenommen(todo):
-
-##### Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys:
-
-    ./Kommentare/Entwurf
-
-##### Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung:
-
-    ./Kommentare/Kommentierung-Prototypen
-
-##### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster:
-
-    ./Kommentare/Kommentierung-Umsetzung
-
-
 ## Dokumentation:
 
 **Table of Contents**
@@ -71,9 +56,21 @@ Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 # Entwurfsmuster
 ### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster
 
+Ein wichtiges Design Pattern ist der Decorator. Der Decorator ist ein Strukturmuster, welches einen ermögtlicht, Objekten dynamisch neue Verhaltensweisen hinzuzufügen. 
+In unserem Fall werden diese Decorator benutzt:
+
+    @require_http_methods(["POST"])
+    @transaction.atomic
+    @validate_goal_user_rights
+
+Der erste decorator limitiert Methoden auf bestimmte request Methoden, in diesem Fall darf die Methode nur mittels POST request aufgerufen werden.
+Der zweite decorator gibt an, das alles in der Methode eine transaction ist, also wenn etwas schief geht wird die Datenbank auf den Ursprungszustand zurück gesetzt.
+Der dritte decorator ist selber geschrieben, und wird für alle Aktionen der Ziele genutzt. 
+Dort wird geprüft, ob der Antragsteller der Änderung entweder der Besitzer der Ziele ist oder ob es ein Trainer war.
+
 # Usability-Testkonzept
 ### Erstellen ein Usability-Testkonzept für die Anwendung
-KK
+
     ./Kommentare/Usability-Testkonzept
 
 ### A/B-Tests
