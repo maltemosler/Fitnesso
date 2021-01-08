@@ -4,13 +4,13 @@ from API.models import FitnessoUser, HauptZiel, Unterziel
 
 # default redirect view / login View
 def home_view(request):
-    context = {'title': "Fitnesso | Home"}
+    context = {'title': "Login"}
     return render(request, "home.html", context=context)
 
 
 # shows the user verwaltung
 def user_verwaltung(request):
-    context = {'title': "Fitnesso | Home"}
+    context = {'title': "User Verwaltung"}
     # check if user is logged in
     if request.user.is_authenticated:
         # check if you are trainer
@@ -44,7 +44,7 @@ def user_verwaltung(request):
 # die view für ziele, kann vom Nutzer und Trainer aufgerufen werden
 def ziele_view(request, user_id):
     ziele = []
-    context = {'title': "Fitnesso | Ziele"}
+    context = {'title': "Ziele"}
     # check if user is authenticated
     if request.user.is_authenticated:
         # get user (get from request when not trainer or get user_id when trainer)
@@ -88,7 +88,7 @@ def ziele_view(request, user_id):
 
 # view um das passwort zu resetten. Nimmt als parameter die user_id an um zu wissen, um welchen Nutzer es sich handelt.
 def reset_passwort_view(request, user_id):
-    context = {'title': "Fitnesso | Ziele"}
+    context = {'title': "Reset Passwort"}
     # Antragsteller eingeloggt?
     if request.user.is_authenticated:
         # Ist der Antragsteller Trainer?
@@ -102,11 +102,11 @@ def reset_passwort_view(request, user_id):
 
 # view für die user anlegen seite. Gibt die HTML Webseite mit passender Überschrift zurück
 def user_anlegen_view(request):
-    context = {'title': "Fitnesso | User anlegen"}
+    context = {'title': "User anlegen"}
     return render(request, "user_anlegen.html", context=context)
 
 
 # view für alle unit-tests
 def tests(request, user_id):
-    context = {'title': "Fitnesso | Tests"}
+    context = {'title': "Tests"}
     return render(request, "tests.html", context=context)
