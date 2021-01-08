@@ -1,3 +1,8 @@
+// JUnit tests wie im Unterricht besprochen
+// Jede function hat mindestens 2 tests, einmal mit richtigen Parametern und ein mal mit falschen Parametern
+// Dabei können interne Server Errors erstellen, da mit IDs getestet wird, die Akzeptiert werden, jedoch nicht in der Datenbank existieren
+// Dies ist jedoch nicht schlimm da nur getestet wird ob der Request gesendet wird oder nicht.
+
 QUnit.module('hauptziel_erstellen-success', function () {
     QUnit.test('hauptziel_erstellen-success', function (assert) {
         const hauptziel = $("#home-hauptziel");
