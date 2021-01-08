@@ -22,10 +22,10 @@ Kann removed werden wenn in Readme aufgenommen:
 
 **Table of Contents**
 
-- [Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys](#todo)
-- [Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung](#todo)
-- [Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster](#todo)
-- [Erstellen ein Usability-Testkonzept für die Anwendung](#todo)
+- [Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys](#Prototyp)
+- [Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung](#Gestaltgesetze)
+- [Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster](#Entwurfsmuster)
+- [Erstellen ein Usability-Testkonzept für die Anwendung](#Usability-Testkonzept)
 
 
 - [Framework](#framework)
@@ -36,6 +36,28 @@ Kann removed werden wenn in Readme aufgenommen:
   * [Frontend](#frontend)
 - [Wie funktioniert der Code?](#sourcecode)
 
+# Prototyp
+
+
+# Gestaltgesetze
+
+
+# Entwurfsmuster
+
+
+# Usability-Testkonzept
+
+### A/B-Tests
+![img_3.png](img_3.png)
+Beim Testen mit anderen Nutzern ist aufgefallen, dass das Erkennen der Fehler beim Registrieren zu lange dauert. Dabei wurde die Concurrent Think Aloud (CTA) verwendet: Nutzer haben nach dem sie den Button „Nutzer anlegen“ gedrückt haben, geflucht das es nicht funktioniert hat und sich gefragt, woran es liegt, weil es nicht offensichtlich war.
+Aus diesem Grund wurde hier eine Variation mit roter Schrift erstellt. Beide Tests wurden mit 10 Personen durchgeführt, wovon 5 mit A und 5 mit B angefangen haben. 
+Dabei hat sich herausgestellt, dass A im Durschnitt eine Zeit von 51,3 Sekunden gedauert hat und B im Durchschnitt 44,9 Sekunden. Das bedeutet, B ist um 6,4 Sekunden (~13%) schneller.
+
+![img_4.png](img_4.png)
+Auch hier ist erst beim Start der ersten Tests aufgefallen, das etwas fehlt. Eine Suchleiste. 
+Sollten mal viele Nutzer existieren ist diese erforderlich. Ohne einen Test analysieren zu müssen, ist hier klar das B schneller ist. Wurde dennoch in der Entwicklung vergessen und ist erst bei den Usability-Tests aufgefallen.
+
+# Dokumentation
 
 ## Framework:
 
