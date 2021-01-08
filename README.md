@@ -181,4 +181,8 @@ Da hier nur dummy Werte eingesetzt werden, wird die antwort des Servers ignorier
 
 Die tests sind zu finden bei: `static/js/tests.js`
 
-http://127.0.0.1:8000/tests/-1
+
+URL: http://localhost:8000/tests/-1
+
+Die -1 in der URL ist eine DummyID. Jeder User hat eine eindeutige positive ID. Somit lassen sich die Javascript tests durchführen,
+ohne einen richtigen User zu nehmen.
