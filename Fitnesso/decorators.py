@@ -12,7 +12,7 @@ def only_ajax(func):
     return wrapper
 
 
-def validate_user(view):
+def validate_goal_user_rights(view):
     def _view(request: WSGIRequest, *args, **kwargs):
         if request.user.fitnessouser.is_trainer or int(request.POST.get("user_id", "")) == int(request.user.id):
             print("permitted user to change goal.")
