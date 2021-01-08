@@ -38,11 +38,11 @@ Kann removed werden wenn in Readme aufgenommen(todo):
 ## Prototyp
 Gestaltgesetz der Ähnlichkeit: Ziele sind immer gleich Aufgebaut und haben die gleichen Funktionen
 
-![img_10.png](img_10.png)
+![img_10.png](Kommentare/pics/img_10.png)
 
 Gestaltgesetz der Ähnlichkeit: Alle Inputfelder sind gleich aufgebaut und funktionieren gleich.
 
-![img_8.png](img_8.png)
+![img_8.png](Kommentare/pics/img_8.png)
 
 Gestaltgesetze Symmetrie: Alle anzeigen auf der Website sind zentriert.
 
@@ -52,7 +52,7 @@ Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 
 ## Informationsarchtektur
 
-![img_6.png](img_6.png)
+![img_6.png](Kommentare/pics/img_6.png)
 
 # Gestaltgesetze
 
@@ -67,15 +67,15 @@ Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 ### A/B-Tests
 
 ## Test 1
-![img_3.png](img_3.png)
+![img_3.png](Kommentare/pics/img_3.png)
 Beim Testen mit anderen Nutzern ist aufgefallen, dass das Erkennen der Fehler beim Registrieren zu lange dauert. Dabei wurde die Concurrent Think Aloud (CTA) verwendet: Nutzer haben nach dem sie den Button „Nutzer anlegen“ gedrückt haben, geflucht das es nicht funktioniert hat und sich gefragt, woran es liegt, weil es nicht offensichtlich war.
 Aus diesem Grund wurde hier eine Variation mit roter Schrift erstellt. Beide Tests wurden mit 10 Personen durchgeführt, wovon 5 mit A und 5 mit B angefangen haben. 
 Dabei hat sich herausgestellt, dass A im Durchschnitt eine Zeit von 51,3 Sekunden gedauert hat und B im Durchschnitt 44,9 Sekunden. Das bedeutet, B ist um 6,4 Sekunden (~13%) schneller.
 
-![img_5.png](img_5.png)
+![img_5.png](Kommentare/pics/img_5.png)
 
 ## Test 2
-![img_4.png](img_4.png)
+![img_4.png](Kommentare/pics/img_4.png)
 Auch hier ist erst beim Start der ersten Tests aufgefallen, das etwas fehlt. Eine Suchleiste. 
 Sollten mal viele Nutzer existieren ist diese erforderlich. Ohne einen Test analysieren zu müssen, ist hier klar das B schneller ist. Wurde dennoch in der Entwicklung vergessen und ist erst bei den Usability-Tests aufgefallen.
 
