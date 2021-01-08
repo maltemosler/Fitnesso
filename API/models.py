@@ -6,7 +6,6 @@ class FitnessoUser(models.Model):
     user = models.OneToOneField(User, models.CASCADE, primary_key=True)  # need because of auth backend.
     vorname = models.CharField(max_length=32, null=True)
     nachname = models.CharField(max_length=32, null=True)
-    password = models.CharField(max_length=64, null=True) # todo: remove
     is_trainer = models.BooleanField(default=False, null=False)
 
     def __str__(self):

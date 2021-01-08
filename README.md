@@ -55,7 +55,7 @@ Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 
 # Entwurfsmuster
 ### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster
-s
+
 Ein wichtiges Design Pattern ist der Decorator. Der Decorator ist ein Strukturmuster, welches einen ermöglicht, Objekten dynamisch neue Verhaltensweisen hinzuzufügen. 
 In unserem Fall werden diese Decorator benutzt:
 
