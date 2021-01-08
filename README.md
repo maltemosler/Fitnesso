@@ -35,7 +35,7 @@ Kann removed werden wenn in Readme aufgenommen(todo):
 
 # Prototyp
 
-## Prototyp
+### Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys
 Gestaltgesetz der Ähnlichkeit: Ziele sind immer gleich Aufgebaut und haben die gleichen Funktionen
 
 ![img_10.png](Kommentare/pics/img_10.png)
@@ -55,12 +55,13 @@ Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 ![img_6.png](Kommentare/pics/img_6.png)
 
 # Gestaltgesetze
-
+### Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung
 
 # Entwurfsmuster
-
+### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster
 
 # Usability-Testkonzept
+### Erstellen ein Usability-Testkonzept für die Anwendung
 
     ./Kommentare/Usability-Testkonzept
 
@@ -118,6 +119,16 @@ Javascript und CSS ist bei `static/js/` und `static/css/`.
 Django Docs:
 https://docs.djangoproject.com/en/3.1/
 
+## Zusätzliche Abhängigkeiten 
+
+###### Fontawesome (https://fontawesome.com/):
+
+Hier wurden die Vectoricons für die Webseite geholt. Wieso Vector? Vector Grafiken sind skallierbar, sehen auf jeder größe also gut aus.
+
+###### JQuery (https://jquery.com/):
+
+Dank JQuery lassen sich AJAX anfragen an den Webserver stellen und es lässt sich sehr einfach auf Elemente zugreifen: `$("#register-email").val()`
+mit diesem kurzen Befehl bekommt man den Wert eines Input Feldes.
 
 ## Installation
 
@@ -163,12 +174,3 @@ Da hier nur dummy Werte eingesetzt werden, wird die antwort des Servers ignorier
 Die tests sind zu finden bei: `static/js/tests.js`
 
 http://127.0.0.1:8000/tests/-1
-
-## Sourcecode:
-
-...
-
-
-Formatting:
-
-https://gist.githubusercontent.com/jonschlinkert/ac5d8122bfaaa394f896/raw/bd1106691cf344e972f575c49ba3cf281beeb9b3/markdown-toc_repeated-headings.md
