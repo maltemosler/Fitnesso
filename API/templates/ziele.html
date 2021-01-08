@@ -8,16 +8,17 @@
 
         <link rel="stylesheet" href="{% static "css/goals.css" %}">
 
-        <div class = "content">
-            <div id = "create-goals">
+        <div class="content">
+            <div id="create-goals">
                 <div id="form">
-                    <h1>Ziele</h1>
+                    <h1>Ziele:</h1>
+                    <h3>{{ vorname }} {{ nachname }}</h3>
                     <div class="wrapper">
-                        <div class = "input-data">
-                        <input id="home-hauptziel" type="text" required>
+                        <div class="input-data">
+                            <input id="home-hauptziel" type="text" required>
                             <div class="underline"></div>
                             <label>Hauptziel erstellen</label>
-                             <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
+                            <div id="hauptziel-create-error" style="display:none">Ziel ungültig</div>
                         </div>
                     </div>
                     <button id="btn" onclick="hauptziel_erstellen()">
@@ -26,32 +27,35 @@
                 </div>
             </div>
         </div>
-        <div class = "row">
+        <div class="row">
             {% for ziel in ziele %}
-            <div class = "main-goal">
-                <div class = "goal-header">
-                    <div class = "title"> {{ ziel.ziel }} </div>
-                    <button id="delete-goal-btn" onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
-                </div>
-                <div class="progress" data-label="{{ ziel.status }}% Complete">
-                    <span class="value" style="width:{{ ziel.status }}%;"></span>
-                </div>
-                <div class ="minor-goal">
-                    {% for unterziel in ziel.unterziele %}
+                <div class="main-goal">
+                    <div class="goal-header">
+                        <div class="title"> {{ ziel.ziel }} </div>
+                        <button id="delete-goal-btn" onclick="hauptziel_delete({{ ziel.id }})">delete hauptziel</button>
+                    </div>
+                    <div class="progress" data-label="{{ ziel.status }}% Complete">
+                        <span class="value" style="width:{{ ziel.status }}%;"></span>
+                    </div>
+                    <div class="minor-goal">
+                        {% for unterziel in ziel.unterziele %}
 
-                    {% if unterziel.status %}
-                        {{ unterziel.ziel }}
-                    {% else %}
-                        {{ unterziel.ziel }}
-                        <button class="btn-hidden" onclick="unterziel_abschliessen({{ unterziel.id }})"><i class="far fa-check-square fa-lg"></i></button>
-                    {% endif %}
-                    <button class="btn-hidden" onclick="unterziel_delete({{ unterziel.id }})"><i class="far fa-minus-square fa-lg"></i></button><br>
-                {% endfor %}
-                <input id="home-unterziel-{{ ziel.id }}" type="text">
-                <button class="btn-hidden" onclick="unterziel_erstellen({{ ziel.id }})"><i class="far fa-plus-square fa-lg"></i></button>
-                <div id="unterziel-create-error-{{ ziel.id }}" style="display:none">Ziel ungültig</div>
+                            {% if unterziel.status %}
+                                {{ unterziel.ziel }}
+                            {% else %}
+                                {{ unterziel.ziel }}
+                                <button class="btn-hidden" onclick="unterziel_abschliessen({{ unterziel.id }})"><i
+                                        class="far fa-check-square fa-lg"></i></button>
+                            {% endif %}
+                            <button class="btn-hidden" onclick="unterziel_delete({{ unterziel.id }})"><i
+                                    class="far fa-minus-square fa-lg"></i></button><br>
+                        {% endfor %}
+                        <input id="home-unterziel-{{ ziel.id }}" type="text">
+                        <button class="btn-hidden" onclick="unterziel_erstellen({{ ziel.id }})"><i
+                                class="far fa-plus-square fa-lg"></i></button>
+                        <div id="unterziel-create-error-{{ ziel.id }}" style="display:none">Ziel ungültig</div>
+                    </div>
                 </div>
-            </div>
 
             {% endfor %}
         </div>

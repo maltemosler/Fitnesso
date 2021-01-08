@@ -42,27 +42,33 @@ def ziele_view(request, user_id):
     context = {'title': "Fitnesso | Ziele"}
     if request.user.is_authenticated:
         if request.user.fitnessouser.is_trainer:
-            hauptziele = HauptZiel.objects.filter(user_id=user_id)
+            user = FitnessoUser.objects.filter(user_id=user_id).first()
         else:
-            hauptziele = HauptZiel.objects.filter(user=request.user.fitnessouser)
+            user = FitnessoUser.objects.filter(user=request.user.fitnessouser).first()
 
-        for hauptziel in hauptziele:
-            unterziele = []
-            goal_percent = 0
-            for unterziel in Unterziel.objects.filter(hauptziel=hauptziel):
-                unterziele.append({"id": unterziel.id, "ziel": unterziel.ziel, "status": unterziel.status})
-            if not hauptziel.id in ziele:
-                all_goals = Unterziel.objects.filter(hauptziel=hauptziel, status=True).count()
-                all_goals_done = Unterziel.objects.filter(hauptziel=hauptziel).count()
+        if user:
+            hauptziele = HauptZiel.objects.filter(user=user)
 
-                if all_goals != 0 and all_goals_done != 0:
-                    goal_percent = int((all_goals / all_goals_done) * 100)
+            context["vorname"] = user.vorname
+            context["nachname"] = user.nachname
 
-                ziele.append(
-                    {"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele,
-                     "status": goal_percent
-                     }
-                )
+            for hauptziel in hauptziele:
+                unterziele = []
+                goal_percent = 0
+                for unterziel in Unterziel.objects.filter(hauptziel=hauptziel):
+                    unterziele.append({"id": unterziel.id, "ziel": unterziel.ziel, "status": unterziel.status})
+                if not hauptziel.id in ziele:
+                    all_goals = Unterziel.objects.filter(hauptziel=hauptziel, status=True).count()
+                    all_goals_done = Unterziel.objects.filter(hauptziel=hauptziel).count()
+
+                    if all_goals != 0 and all_goals_done != 0:
+                        goal_percent = int((all_goals / all_goals_done) * 100)
+
+                    ziele.append(
+                        {"id": hauptziel.id, "ziel": hauptziel.ziel, "unterziele": unterziele,
+                         "status": goal_percent
+                         }
+                    )
 
     context["ziele"] = ziele
     return render(request, "ziele.html", context=global_context(request, context))
