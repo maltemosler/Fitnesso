@@ -127,7 +127,7 @@ Javascript und CSS ist bei `static/js/` und `static/css/`.
 Django Docs:
 https://docs.djangoproject.com/en/3.1/
 
-## Zusätzliche Abhängigkeiten 
+### Zusätzliche Abhängigkeiten: 
 
 ###### Fontawesome (https://fontawesome.com/):
 
