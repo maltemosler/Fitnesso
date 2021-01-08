@@ -36,6 +36,24 @@ Kann removed werden wenn in Readme aufgenommen(todo):
 # Prototyp
 
 ### Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys
+
+
+## Prototype:
+
+![prototype-1](Kommentare/pics/prototype/prototype-1.jpg)
+![prototype-2](Kommentare/pics/prototype/prototype-2.jpg)
+![prototype-3](Kommentare/pics/prototype/prototype-3.jpg)
+![prototype-4](Kommentare/pics/prototype/prototype-4.jpg)
+![prototype-5](Kommentare/pics/prototype/prototype-5.jpg)
+![prototype-6](Kommentare/pics/prototype/prototype-6.jpg)
+
+## Informationsarchtektur:
+
+![img_6.png](Kommentare/pics/img_6.png)
+
+# Gestaltgesetze
+### Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung
+
 Gestaltgesetz der Ähnlichkeit: Ziele sind immer gleich Aufgebaut und haben die gleichen Funktionen
 
 ![img_10.png](Kommentare/pics/img_10.png)
@@ -50,19 +68,12 @@ Gestaltgesetze Gemeinsame Region: Ziele und Forms sind mit einem Kasten umrundet
 
 Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
 
-## Informationsarchtektur
-
-![img_6.png](Kommentare/pics/img_6.png)
-
-# Gestaltgesetze
-### Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung
-
 # Entwurfsmuster
 ### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster
 
 # Usability-Testkonzept
 ### Erstellen ein Usability-Testkonzept für die Anwendung
-
+KK
     ./Kommentare/Usability-Testkonzept
 
 ### A/B-Tests
