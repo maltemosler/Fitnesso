@@ -6,6 +6,20 @@
     {% if request.user.is_authenticated %}
         {% if request.user.fitnessouser.is_trainer %}
             <link rel="stylesheet" href="{% static "css/manage-user.css" %}">
+
+            <input id="user_delete_id" style="display:none">
+
+            <div id="confirmation-modal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <h3 class="modal_headline">Willst du den nutzer wirklich Löschen?</h3><div id="user_delete_name"></div><br>
+                    <br>
+                    <button onclick="delete_user($('#user_delete_id').val());">
+                        Delete
+                    </button>
+                </div>
+            </div>
+
+
             <div id="content">
                 <div id="form">
                     <h1>Alle Nutzer</h1>
@@ -56,7 +70,8 @@
                                     <i class="fas fa-undo fa-2x "></i></button>
                             </td>
                             <td>
-                                <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">
+                                <button class="btn-hidden" style="color: red" onclick="show_modal({{ user.user.id }}, '{{ user.vorname }}', '{{ user.nachname }}')">
+{#                                <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">#}
                                     <i class="far fa-trash-alt fa-2x"></i>
                                 </button>
                             </td>
