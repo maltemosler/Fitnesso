@@ -47,11 +47,41 @@ Gestaltgesetz der Ähnlichkeit: Alle input Felder sind gleich aufgebaut und funk
 
 ![img_8.png](Kommentare/pics/img_8.png)
 
-Gestaltgesetze Symmetrie: Alle anzeigen auf der Website sind zentriert.
+##### Gestaltgesetze Symmetrie: 
+Alle anzeigen auf der Website sind zentriert.
 
-Gestaltgesetze gemeinsame Region: Ziele und Forms sind mit einem Kasten umrundet.
+##### Gestaltgesetze der Nähe: 
+Die input Felder sind nahe untereinander angeordnet da diese zusammengehören und auch als solches empfunden werden sollen. Dieses Gestaltungsgesetz wird durch das Gestaltungsgesetz der Geneinsamen Region unterstützt bzw. verstärkt.
 
-Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen
+##### Gestaltgesetze gemeinsame Region: 
+Ziele und Forms sind mit einem Kasten umrundet. Webseite ist nach dem bekannten Kachel-Design aufgebaut.
+Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen.
+
+##### Millersche Gesetz / Hickesches Gesetz:  
+Die beiden Gesetze beziehen sich auf die Aufmerksamkeit der User. Die Website wurde so aufgebaut, dass nicht zu viel angezeigt wird und der User auch nur die Optionen hat, die er auch wirklich braucht.
+Gestaltgesetz verbundene Elemente: Bei der User Verwaltung wird das Gesetz der verbundenen Elemente in Form einer Tabelle benutzt. In jeder Zeile steht ein User und die Einträge in der Zeile sind genau dem User zugeordnet.
+
+![img_11.png](Kommentare/pics/img_11.png)
+
+## ISO 9241 
+##### Aufgabenangemessenheit: 
+Die Aufgabe der Webseite, anhand der User Stories, ist es das der Trainer einfach Nutzer hinzufügen kann und deren Fortschritt leicht kontrollieren und anpassen kann.  
+
+##### Selbstbeschreibungsfähigkeit: 
+Dem Nutzer wird durch eine Überschrift angezeigt, in welchem Dialog er sich findet. Zusätzlich wurde die Handlung die der Nutzer in den eigenen Dialogen vornehmen kann auf das minimalste reduziert, um den Nutzer nicht zu verwirren.
+
+##### Steuerbarkeit: 
+Sobald der Nutzer einen Dialog z.B. Nutzer anlegen öffnet, kann der Nutzer jederzeit diesen Dialog beenden und die Geschwindigkeit hängt von den Eingaben des Nutzers ab. Es gibt kein Zeitlimit für die Eingabe.
+
+##### Erwartungskonformität: 
+Sämtliche Eingabefelder, Menüpunkte und Button verhalten sich so wie man es gewohnt ist (z. B. Login Seite). 
+
+##### Fehlertoleranz: 
+Wenn der Nutzer eine fehlerhafte Eingabe bei einem input Feld macht, wird dieses Rot angezeigt. Der Nutzer muss dann lediglich das Eingabefeld mit dem fehlerhaften Eintrag korrigieren, die richtigen Einträge werden gespeichert und müssen nicht nochmal eingegeben werden.
+
+##### Individualisierbarkeit: 
+Das System ist zu einem gewissen Grad individualisierbar, der Nutzer kann über den Freitext der Ziele die Darstellung von Informationen ändern und somit an seine individuellen Fähigkeiten und Bedürfnisse anpassen.
+
 
 # Entwurfsmuster
 ### Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster
