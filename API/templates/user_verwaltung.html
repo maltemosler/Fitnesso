@@ -11,10 +11,15 @@
 
             <div id="confirmation-modal" class="modal" style="display:none;">
                 <div class="modal-content">
-                    <h3 class="modal_headline">Willst du den nutzer wirklich Löschen?</h3><div id="user_delete_name"></div><br>
+                    <h3 class="modal_headline">Willst du den nutzer wirklich Löschen?</h3>
+                    <div id="user_delete_name"></div>
+                    <br>
                     <br>
                     <button onclick="delete_user($('#user_delete_id').val());">
                         Delete
+                    </button>
+                    <button onclick="$('#confirmation-modal').hide();">
+                        Close
                     </button>
                 </div>
             </div>
@@ -70,8 +75,9 @@
                                     <i class="fas fa-undo fa-2x "></i></button>
                             </td>
                             <td>
-                                <button class="btn-hidden" style="color: red" onclick="show_modal({{ user.user.id }}, '{{ user.vorname }}', '{{ user.nachname }}')">
-{#                                <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">#}
+                                <button class="btn-hidden" style="color: red"
+                                        onclick="show_modal({{ user.user.id }}, '{{ user.vorname }}', '{{ user.nachname }}')">
+                                    {#                                <button class="btn-hidden" style="color: red" onclick="delete_user({{ user.user.id }})">#}
                                     <i class="far fa-trash-alt fa-2x"></i>
                                 </button>
                             </td>
