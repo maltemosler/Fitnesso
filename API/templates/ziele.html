@@ -37,22 +37,37 @@
                     <div class="progress" data-label="{{ ziel.status }}% Complete">
                         <span class="value" style="width:{{ ziel.status }}%;"></span>
                     </div>
-                    <div class="minor-goal">
+                    <table class ="minor-goal-table">
+                        <colgroup>
+                           <col span="1" style="width: 80%; ">
+                           <col span="1" style="width: 10%; ">
+                           <col span="1" style="width: 10%;">
+                        </colgroup>
                         {% for unterziel in ziel.unterziele %}
-
+                        <tr>
                             {% if unterziel.status %}
-                                {{ unterziel.ziel }}
+                            <td>{{ unterziel.ziel }}</td>
                             {% else %}
-                                {{ unterziel.ziel }}
-                                <button class="btn-hidden" onclick="unterziel_abschliessen({{ unterziel.id }})"><i
-                                        class="far fa-check-square fa-lg"></i></button>
+                            <td>{{ unterziel.ziel }}</td>
+                            <td>
+                                <button class="btn-hidden" onclick="unterziel_abschliessen({{ unterziel.id }})">
+                                    <i class="far fa-check-square fa-lg"></i>
+                                </button>
+                            </td>
                             {% endif %}
-                            <button class="btn-hidden" onclick="unterziel_delete({{ unterziel.id }})"><i
-                                    class="far fa-minus-square fa-lg"></i></button><br>
+                            <td>
+                                <button class="btn-hidden" onclick="unterziel_delete({{ unterziel.id }})">
+                                    <i class="far fa-minus-square fa-lg"></i>
+                                </button>
+                            </td>
+                        <tr>
                         {% endfor %}
+                    </table>
+                    <div class = "create-new-minor-goal">
                         <input id="home-unterziel-{{ ziel.id }}" type="text">
-                        <button class="btn-hidden" onclick="unterziel_erstellen({{ ziel.id }})"><i
-                                class="far fa-plus-square fa-lg"></i></button>
+                        <button class="btn-hidden" onclick="unterziel_erstellen({{ ziel.id }})">
+                            <i class="far fa-plus-square fa-lg"></i>
+                        </button>
                         <div id="unterziel-create-error-{{ ziel.id }}" style="display:none">Ziel ungültig</div>
                     </div>
                 </div>
