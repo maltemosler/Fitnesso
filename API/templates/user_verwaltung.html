@@ -11,16 +11,16 @@
 
             <div id="confirmation-modal" class="modal" style="display:none;">
                 <div class="modal-content">
-                    <h3 class="modal_headline">Willst du den nutzer wirklich Löschen?</h3>
-                    <div id="user_delete_name"></div>
-                    <br>
-                    <br>
-                    <button onclick="delete_user($('#user_delete_id').val());">
-                        Delete
-                    </button>
-                    <button onclick="$('#confirmation-modal').hide();">
-                        Close
-                    </button>
+                    <h3 class="modal_headline">Willst du den Nutzer wirklich löschen?</h3>
+                    <h2><div id="user_delete_name"></div></h2>
+                    <div id="popup-btns">
+                        <button class ="btn" onclick="delete_user($('#user_delete_id').val());">
+                            <span>Nutzer löschen</span>
+                        </button>
+                        <button class ="btn" id="delete-btn" onclick="$('#confirmation-modal').hide();">
+                            <span>Abbrechen</span>
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -33,25 +33,32 @@
                             <input id="search-user" type="text" required>
                             <div class="underline"></div>
                             <label>Suche Nutzer</label>
-                            <div id="user-verwaltung-search-error" style="display:none; color: red;">Kann Nutzer nicht
-                                finden!
-                            </div>
+                            <div id="user-verwaltung-search-error" style="display:none; color: red;">Kann Nutzer nicht finden! </div>
                         </div>
                     </div>
-                    <button id="btn" onclick=user_filter()>
-                        <span>FIND</span>
+                    <button class ="btn" onclick=user_filter()>
+                        <span>Suchen</span>
                     </button>
                 </div>
                 <table class="content-table">
+                    <colgroup>
+                        <col span="1" style="width: 5%; ">
+                        <col span="1" style="width: 8%; ">
+                        <col span="1" style="width: 8%; ">
+                        <col span="1" style="width: 23%; ">
+                        <col span="1" style="width: 5%; ">
+                        <col span="1" style="width: 5%; ">
+                        <col span="1" style="width: 5%; ">
+                    </colgroup>
                     <thead>
                     <tr>
                         <th>ID</th>
                         <th>Nachname</th>
                         <th>Vorname</th>
-                        <th>Goals Percent</th>
-                        <th>Goals</th>
-                        <th>Reset Password</th>
-                        <th>Delete</th>
+                        <th>Zielfortschritt</th>
+                        <th>Ziele</th>
+                        <th>Passwort zurücksetzen</th>
+                        <th>Nutzer Löschen</th>
                     </tr>
                     </thead>
                     <tbody>
