@@ -125,7 +125,26 @@ Als Framework wird Django3 (3.13) verwendet.
 ### Warum Django?
 
 Das Framework bringt standardmäßig eine SQLite Datenbank mit. Diese Datenbank lässt sich in Python erstellen (`API/models.py`) und das Framework kümmert sich um die Verwaltung / Übersetzung.
-Bei einem Request wird der Python Code aufgerufen und die benötigten Daten aus der Datenbank geladen.
+
+![django_model_view.png](Kommentare/pics/django_model_view.png)
+
+Kurzbeschreibung der Grafik: Bei einem Request wird der Python Code (view) aufgerufen und die benötigten Daten werden aus der Datenbank geladen.
+
+Aufgrund der Möglichkeit zur schnellen und effizienten Umsetzung von Projekten, wird das Django-Webframework häufig als "Das Webframework für Perfektionisten mit Deadlines" bezeichnet.
+(https://www.hosteurope.de/blog/8-gruende-warum-sie-das-quelloffene-django-webframework-nutzen-sollten/)
+
+Aus welchen Gründen wird das Framework so bezeichnet?
+  
+  - Standardisierte Struktur
+  - Eingebaute Sicherheitskonzepte (Standardmäßig sicher)
+  - REST Framework (API)
+  - Projekte aufteilbar in Teilprojekte (Django Apps)
+  - Abwärtskompatibel
+
+Mögliche Nachteile:
+
+  - Entwicklung des Frameworks erfolgt langsam, aufgrund der Abwärtskompatibilität
+
 
 Dank Django lassen sich zusätzlich im HTML Code *schleifen* und *if* abfragen erstellen, was den Arbeitsaufwand um einiges reduziert.
 So muss man nicht beim Laden der Seite noch zusätzlich die Daten via Javascript laden lassen. 
