@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import transaction
 from django.http import HttpResponseServerError, HttpResponse
 from django.views.decorators.http import require_http_methods
@@ -20,7 +21,16 @@ def hauptziel_erstellen(request):
     ziel = request.POST.get("ziel", None)
     if not ziel:
         return HttpResponseServerError("ziel missing")
-    HauptZiel.objects.create(user_id=user_id, ziel=ziel)
+
+    try:
+        user = User.objects.get(id=user_id)
+    except User.DoesNotExist:
+        return HttpResponseServerError("user does not exist")
+
+    try:
+        HauptZiel.objects.create(user=user, ziel=ziel)
+    except:
+        return HttpResponseServerError("user id does not exist")
 
     return HttpResponse("200")
 
@@ -40,7 +50,11 @@ def hauptziel_delete(request):
     if not ziel_id:
         return HttpResponseServerError("ziel id missing")
 
-    HauptZiel.objects.filter(user_id=user_id, id=ziel_id).delete()
+    try:
+        z = HauptZiel.objects.get(user_id=user_id, id=ziel_id)
+    except HauptZiel.DoesNotExist:
+        return HttpResponseServerError("Ziel doesn't exists")
+    z.delete()
     return HttpResponse("200")
 
 
@@ -90,7 +104,10 @@ def unterziel_abschliessen(request):
     if not unterziel_id:
         return HttpResponseServerError("unterziel id missing")
 
-    uz = Unterziel.objects.get(id=unterziel_id)
+    try:
+        uz = Unterziel.objects.get(id=unterziel_id)
+    except Unterziel.DoesNotExist:
+        return HttpResponseServerError("can't find unterziel")
 
     # check if user from hauptziel is user who requested this change,
     if int(uz.hauptziel.user.user_id) == int(user_id) or request.user.fitnessouser.is_trainer:
@@ -114,7 +131,10 @@ def unterziel_delete(request):
     if not unterziel_id:
         return HttpResponseServerError("unterziel id missing")
 
-    uz = Unterziel.objects.get(id=unterziel_id)
+    try:
+        uz = Unterziel.objects.get(id=unterziel_id)
+    except Unterziel.DoesNotExist:
+        return HttpResponseServerError("can't find unterziel")
 
     # check if user from hauptziel is user who requested this change
     if int(uz.hauptziel.user.user_id) == int(user_id) or request.user.fitnessouser.is_trainer:
