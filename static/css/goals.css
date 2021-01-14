@@ -5,14 +5,6 @@
     border-bottom: 3px solid #32140b;
 }
 
-h1{
-    text-decoration: underline;
-}
-
-body{
-    background-color: #00b7ff;
-    background-image: url("/static/resources/Pattern-Randomized.svg");
-}
 
 .wrapper{
   width: 400px;
