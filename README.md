@@ -236,3 +236,19 @@ URL: http://127.0.0.1:8000/tests/-1
 
 Die -1 in der URL ist eine DummyID. Jeder User hat eine eindeutige positive ID. Somit lassen sich die Javascript tests durchführen,
 ohne einen richtigen User zu nehmen.
+
+
+Hier die alte Präsentation, welche auf das Backend (PROTOTYPE + Vorstellung der Webseite fehlte noch) einging, is auch nutzbar für die Doku, sollte einen guten Gesamtüberblick über das Backend geben:
+
+![img.png](Kommentare/pics/pp/imgthumb.png)
+![img_1.png](Kommentare/pics/pp/img_1.png)
+![img_2.png](Kommentare/pics/pp/img_2.png)
+![img_3.png](Kommentare/pics/pp/img_3.png)
+![img_4.png](Kommentare/pics/pp/img_4.png)
+![img_5.png](Kommentare/pics/pp/img_5.png)
+![img_6.png](Kommentare/pics/pp/img_6.png)
+![img_7.png](Kommentare/pics/pp/img_7.png)
+![img_8.png](Kommentare/pics/pp/img_8.png)
+![img_9.png](Kommentare/pics/pp/img_9.png)
+![img_10.png](Kommentare/pics/pp/img_10.png)
+![img_11.png](Kommentare/pics/pp/img_11.png)
