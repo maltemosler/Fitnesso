@@ -16,7 +16,7 @@
 - [Unit-Tests](#unit-tests)
   * [Backend](#backend)
   * [Frontend](#frontend)
-- [Ursprüngliche Backend Präsentation](#Ursprüngliche Backend Präsentation)
+- [Ursprüngliche Backend Präsentation](#Präsentation)
 
 # Prototyp
 
@@ -237,9 +237,9 @@ URL: http://127.0.0.1:8000/tests/-1
 Die -1 in der URL ist eine DummyID. Jeder User hat eine eindeutige positive ID. Somit lassen sich die Javascript tests durchführen,
 ohne einen richtigen User zu nehmen.
 
-# Ursprüngliche Backend Präsentation
+# Präsentation
 
-Hier die alte Präsentation, welche auf das Backend (PROTOTYPE + Vorstellung der Webseite fehlte noch) einging, is auch nutzbar für die Doku, sollte einen guten Gesamtüberblick über das Backend geben:
+Hier die alte ursprüngliche Präsentation, welche auf das Backend (PROTOTYPE + Vorstellung der Webseite fehlte noch) einging, is auch nutzbar für die Doku, sollte einen guten Gesamtüberblick über das Backend geben:
 
 ![img.png](Kommentare/pics/pp/imgthumb.png)
 ![img_1.png](Kommentare/pics/pp/img_1.png)
