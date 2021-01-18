@@ -101,7 +101,7 @@ Dort wird geprüft, ob der Antragsteller der Änderung entweder der Besitzer der
 # Usability-Testkonzept
 ### Erstellen ein Usability-Testkonzept für die Anwendung
 
-Das Testkonzept ist relativ simpel. Wir erklären den Nutzer nichts, sondern lassen ihn selber die Webseite erkunden. Dabei wird getrackt, wie lange er für bestimmte Aufgaben braucht. Sobald bei dem Nutzer frustation aufkommt oder er aus unsererSicht zu lange für eine Aufgabe braucht, wurden A/B Tests erstellt, also Variationen zur Ursprungsversion. Sollte die neue Version die erkannten Probleme beheben bzw. beschleunigen, dann wird diese eingebaut.
+Das Testkonzept ist relativ simpel. Wir erklären den Nutzer nichts, sondern lassen ihn selber die Webseite erkunden. Dabei wird getrackt, wie lange er für bestimmte Aufgaben braucht. Sobald bei dem Nutzer frustation aufkommt oder er aus unserer Sicht zu lange für eine Aufgabe braucht, wurden A/B Tests erstellt, also Variationen zur Ursprungsversion. Sollte die neue Version die erkannten Probleme beheben bzw. beschleunigen, dann wird diese eingebaut.
 
 ### A/B-Tests
 
