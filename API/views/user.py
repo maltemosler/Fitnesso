@@ -75,7 +75,11 @@ def user_login(request):
     except User.DoesNotExist:
         return HttpResponse(status=403)
 
+    # create relation if not exists (only happens when you create a admin user with console)
     su, new = FitnessoUser.objects.get_or_create(user=user)
+    if new:
+        su.is_trainer = True
+        su.save()
 
     # try to authenticate user
     try:
