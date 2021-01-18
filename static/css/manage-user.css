@@ -218,6 +218,7 @@ td, th{
 
 #popup-btns {
     display: flex;
+    justify-content: center;
 }
 
 #delete-btn {

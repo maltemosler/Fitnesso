@@ -71,9 +71,11 @@ def user_login(request):
 
     # check if Email exists in Database
     try:
-        su = User.objects.get(username=email).fitnessouser
+        user = User.objects.get(username=email)
     except User.DoesNotExist:
         return HttpResponse(status=403)
+
+    su, new = FitnessoUser.objects.get_or_create(user=user)
 
     # try to authenticate user
     try:
@@ -81,11 +83,11 @@ def user_login(request):
     except:
         return HttpResponseServerError(status=403)
 
-    if user is not None:
+    if user is not None and su:
         # if authenticate was successfully then login the users
         login(request, user)
         # return json response with boolean is_trainer to know where to redirect the user
-        return JsonResponse({"is_trainer": user.fitnessouser.is_trainer, "user_id": user.fitnessouser.user.id})
+        return JsonResponse({"is_trainer": su.is_trainer, "user_id": su.user.id})
     else:
         return HttpResponseServerError(status=403)
 

@@ -199,7 +199,8 @@ Nachdem Python installiert wurde, können Sie die unten stehenden Befehle ausfü
     
     python manage.py makemigrations API
     python manage.py migrate 
-
+  
+    # Please write your email when the command below ask for the username
     python manage.py createsuperuser 
     
 
