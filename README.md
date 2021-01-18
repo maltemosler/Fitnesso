@@ -7,7 +7,7 @@
 - [Entwurf eines Prototypen (Prototyp + Informationsarchitektur) aus den Personas und den User Storys](#Prototyp)
 - [Kommentierung der Prototypen mit Gestaltgesetzen und Infos zu menschlichen Wahrnehmung](#Gestaltgesetze)
 - [Kommentierung der Umsetzung des Prototypen mittels Entwurfsmuster](#Entwurfsmuster)
-- [Erstellen ein Usability-Testkonzept für die Anwendung](#Usability-Testkonzept)
+- [Erstellung eines Usability-Testkonzept für die Anwendung](#Usability-Testkonzept)
 
 
 - [Framework](#framework)
@@ -48,13 +48,13 @@ Gestaltgesetz der Ähnlichkeit: Alle input Felder sind gleich aufgebaut und funk
 ![img_8.png](Kommentare/pics/img_8.png)
 
 ##### Gestaltgesetze Symmetrie: 
-Alle anzeigen auf der Website sind zentriert.
+Alle Anzeigen auf der Website sind zentriert.
 
 ##### Gestaltgesetze der Nähe: 
-Die input Felder sind nahe untereinander angeordnet da diese zusammengehören und auch als solches empfunden werden sollen. Dieses Gestaltungsgesetz wird durch das Gestaltungsgesetz der Geneinsamen Region unterstützt bzw. verstärkt.
+Die input Felder sind nah untereinander angeordnet da diese zusammengehören und auch als solches empfunden werden sollen. Dieses Gestaltungsgesetz wird durch das Gestaltungsgesetz der Gemeinsamen Region unterstützt bzw. verstärkt.
 
-##### Gestaltgesetze gemeinsame Region: 
-Ziele und Forms sind mit einem Kasten umrundet. Webseite ist nach dem bekannten Kachel-Design aufgebaut.
+##### Gestaltgesetze Gemeinsame Region: 
+Ziele und Forms sind mit einem Kasten umrundet. Die Webseite ist nach dem bekannten Kachel-Design aufgebaut.
 Fitts‘ Gesetz: Alle Knöpfe und Eingabefelder sind leicht zu treffen.
 
 ##### Millersche Gesetz / Hickesches Gesetz:  
@@ -68,7 +68,7 @@ Gestaltgesetz verbundene Elemente: Bei der User Verwaltung wird das Gesetz der v
 Die Aufgabe der Webseite, anhand der User Stories, ist es das der Trainer einfach Nutzer hinzufügen kann und deren Fortschritt leicht kontrollieren und anpassen kann.  
 
 ##### Selbstbeschreibungsfähigkeit: 
-Dem Nutzer wird durch eine Überschrift angezeigt, in welchem Dialog er sich findet. Zusätzlich wurde die Handlung die der Nutzer in den eigenen Dialogen vornehmen kann auf das minimalste reduziert, um den Nutzer nicht zu verwirren.
+Dem Nutzer wird durch eine Überschrift angezeigt, in welchem Dialog er sich befindet. Zusätzlich wurde die Handlung die der Nutzer in den eigenen Dialogen vornehmen kann auf das minimalste reduziert, um den Nutzer nicht zu "verwirren".
 
 ##### Steuerbarkeit: 
 Sobald der Nutzer einen Dialog z.B. Nutzer anlegen öffnet, kann der Nutzer jederzeit diesen Dialog beenden und die Geschwindigkeit hängt von den Eingaben des Nutzers ab. Es gibt kein Zeitlimit für die Eingabe.
@@ -105,7 +105,7 @@ Dort wird geprüft, ob der Antragsteller der Änderung entweder der Besitzer der
 
 ## Test 1
 ![img_3.png](Kommentare/pics/img_3.png)
-Beim Testen mit anderen Nutzern ist aufgefallen, dass das Erkennen der Fehler beim Registrieren zu lange dauert. Dabei wurde die Concurrent Think Aloud (CTA) verwendet: Nutzer haben nach dem sie den Button „Nutzer anlegen“ gedrückt haben, geflucht das es nicht funktioniert hat und sich gefragt, woran es liegt, weil es nicht offensichtlich war.
+Beim Testen mit anderen Nutzern ist aufgefallen, dass das Erkennen der Fehler beim Registrieren zu lange dauert. Dabei wurde die Concurrent Think Aloud (CTA) verwendet: Nutzer haben nach dem sie den Button „Nutzer anlegen“ gedrückt haben sich gefragt, woran es liegt, weil es nicht offensichtlich war.
 Aus diesem Grund wurde hier eine Variation mit roter Schrift erstellt. Beide Tests wurden mit 10 Personen durchgeführt, wovon 5 mit A und 5 mit B angefangen haben. 
 Dabei hat sich herausgestellt, dass A im Durchschnitt eine Zeit von 51,3 Sekunden gedauert hat und B im Durchschnitt 44,9 Sekunden. Das bedeutet, B ist um 6,4 Sekunden (~13 %) schneller.
 
@@ -124,7 +124,7 @@ Als Framework wird Django3 (3.13) verwendet.
 
 ### Warum Django?
 
-Das Framework bringt standardmäßig eine SQLite Datenbank mit. Diese Datenbank lässt sich in Python erstellen (`API/models.py`) und das Framework kümmert sich um die Verwaltung / Übersetzung.
+Das Framework bringt standardmäßig eine SQLite Datenbank mit. Diese Datenbank lässt sich in Python erstellen (`API/models.py`) und das Framework ist zuständig für die Verwaltung / Übersetzung.
 
 ![django_model_view.png](Kommentare/pics/django_model_view.png)
 
@@ -163,13 +163,13 @@ Beispiel Schleife:
       Status: {{ ziel.status }}
     {% endfor %}
 
-Ansonsten wird normales Javascript und HTML verwendet und ist deshalb auch das Framework für dieses Projekt.
+Ansonsten wird normales Javascript + HTML verwendet und ist deshalb auch das Framework für dieses Projekt.
 
 Zum Erstellen, Löschen (…) eines Ziels wird beispielsweise ein POST request (AJAX) an den Webserver gesendet. 
 
 Alle Schnittstellen sind bei `Fitnesso/urls.py` zu finden.
 Alle HTML Templates sind bei `API/templates/`
-Javascript und CSS ist bei `static/js/` und `static/css/`.
+Javascript + CSS ist bei `static/js/` und `static/css/`.
 
 Django Docs:
 https://docs.djangoproject.com/en/3.1/
@@ -215,7 +215,7 @@ Unser Testkonzept sieht Backend und Frontend tests vor.
 
 #### Backend:
 
-Um die Schnittstellen zu testen werden Daten benötigt. 
+Um die Schnittstellen zu testen, werden Daten benötigt. 
 Aus diesem Grund wird eine Datenbank "gemockt", also eine temporäre Datenbank erstellt, welche Test Daten enthält und nur während des Tests verfügbar ist.
 
 Jede Schnittstellen wird mit mindestens zwei Tests getestet. Ein Test, welcher falsche Daten sendet und damit ein ServerError hervorruft und einer, welcher richtige Daten sendet und somit schaut ob der HTTP Response Code 200 ist.
