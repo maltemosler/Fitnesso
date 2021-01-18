@@ -23,12 +23,7 @@ def hauptziel_erstellen(request):
         return HttpResponseServerError("ziel missing")
 
     try:
-        user = User.objects.get(id=user_id)
-    except User.DoesNotExist:
-        return HttpResponseServerError("user does not exist")
-
-    try:
-        HauptZiel.objects.create(user=user, ziel=ziel)
+        HauptZiel.objects.create(user_id=user_id, ziel=ziel)
     except:
         return HttpResponseServerError("user id does not exist")
 
