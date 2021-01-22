@@ -30,13 +30,16 @@ Da Github die Bilder runter skaliert sind die Kommentare auf dem Bildern jeweils
 Die Login-Seite ist relative minimalistisch gestaltet, da der
 Benutzer beim Besuchen der Webseite nicht mit
 Informationen überladen werden soll.
+
 Im Hintergrund läuft ein Fitness Video das als "Eyecatcher"
 dient und dem Benutzer direkt vermittelt, dass es sich hierbei
 um eine Fitness Webseite handelt.
+
 Der Benutzer gibt bei dem Username seine E-Mail Adresse
 und das Passwort, welches er von dem Trainer erhalten hat,
 ein. Danach wird er weiter auf die Seite mit den Zielen
 geleitet.
+
 Der Trainer loggt sich über die gleiche Seite ein. Hierbei wird
 durch Backend überprüft ob es sich um einen Trainer oder
 Nutzer handelt. Der Trainer wird danach auf die
@@ -46,16 +49,19 @@ Die Nutzerverwaltung bietet dem Trainer die Möglichkeit
 eine Übersicht über alle Nutzer zu erhalten. Diese
 Verwaltung dient als zentrale Seite für den Trainer.
 Hierrüber kann der Trainer die Stammdaten der Benutzer
-sehen, den aktuellen Trainingfortschritt, auf die Ziele der
+sehen, den aktuellen Trainings Fortschritt, auf die Ziele der
 Benutzer zugreifen, das Passwort ändern und den
 Benutzer löschen.
+
 Eine Suchfunktion erlaubt es dem Trainer Benutzer schnell
 zu finden. Hierbei wird der Nutzer auf den das
 Suchkriterium zutrifft markiert, sodass der Trainer den
 Nutzer schnell finden kann.
+
 Die Ziele und die Passwort ändern Funktion können über
 einen Knopf aufgerufen werden, wodurch der Trainer auf
 die entsprechende Seite weitergeleitet wird.
+
 Drückt der Trainer auf den Löschen Knopf wird ein PopUp eingeblendet. In diesem Pop-Up wird der Trainer
 erneut gefragt ob er den Benutzer mit anzeige von Vorund Nachnamen wirklich löschen möchte. Durch zwei
 Knöpfe kann der Trainer die Löschung bestätigen oder
@@ -72,10 +78,12 @@ den Anforderungen
  entspricht (8 Zeichen, mindestens ein Zeichen von jeder
 Gruppe, Sonderzeichen,
 Großbuchstaben, Zahlen und Kleinbuchstaben).
+
 Sollte bei der Eingabe ein Fehler auftreten (Feld nicht
 ausgefüllt, Eingabe entspricht nicht
 den Anforderungen) wird dies dem Trainer angezeigt und die
 Felder werden rot markiert.
+
 Bei dem Passwort Feld wird zusätzlich der Hinweis
 eingeblendet welche Kriterien erfüllt
 werden müssen sollte das eingeben Passwort vom Trainer
@@ -90,11 +98,13 @@ er auf diese Seite weitergeleitet. Dem Trainer wird
 dabei angezeigt um welchen Nutzer es sich handelt.
 Dies dient zur Sicherheit, dass der Trainer nicht aus
 versehen das falsche Passwort ändert.
+
 Der Trainer gibt über diese Seite das neue Passwort
 für den Benutzer ein. Hierbei greifen die gleichen
 Passwortkriterien wie bei der Erstellung des Nutzer (8
 Zeichen mit jeweils einem Zeichen aus einer
 Zeichengruppe).
+
 Sobald der Trainer auf Passwort zurücksetzen klickt ist
 das Passwort geändert und der Nutzer kann sich mit
 dem neuen Passwort anmelden.
@@ -102,6 +112,7 @@ dem neuen Passwort anmelden.
 Über den Benutzeransicht kann der Trainer
 direkt die Ziele der einzelnen Benutzer
 einsehen.
+
 Hierbei wird dem Trainer angezeigt um welchen
 Ziele von welchem Benutzer es sich handelt.
 Der Trainer sieht immer die aktuell Stand der
@@ -120,11 +131,12 @@ Die Ansicht des Benutzer entspricht der
 gleichen wie des Trainers nur mit dem
 Unterschied das der Benutzer nicht seinen
 eigenen Namen angezeigt bekommt und nur
-auf seine Ziele zugriff hat
+auf seine Ziele zugriff hat.
 ![prototype-7](Kommentare/pics/prototype/Ziele-Useransicht.png)
 Über den Benutzeransicht kann der Trainer
 direkt die Ziele der einzelnen Benutzer
 einsehen.
+
 Hierbei wird dem Trainer angezeigt um welchen
 Ziele von welchem Benutzer es sich handelt.
 Der Trainer sieht immer die aktuell Stand der
