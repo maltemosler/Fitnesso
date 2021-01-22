@@ -17,25 +17,25 @@ function validateEmail(email, error_element) {
 
 function validatePassword(password, password_repeat, error_element, password_repeat_error) {
     var validate_pw = true;
-    error_element.text("Your password must: \n");
+    error_element.text("Dein Passwort muss: \n");
     if (!/[A-Z]/.test(password)) {
-        error_element.text(error_element.text() + "- Contain at least one uppercase letter (A-Z)\n");
+        error_element.text(error_element.text() + "- Mindestens ein Großbuchstaben enthalten (A-Z)\n");
         validate_pw = false;
     }
     if (!/[a-z]/.test(password)) {
-        error_element.text(error_element.text() + "- Contain at least one lowercase letter (a-z)\n");
+        error_element.text(error_element.text() + "- Mindestens ein Kleinbuchstaben enthalten (a-z)\n");
         validate_pw = false;
     }
     if (!/[0-9]/.test(password)) {
-        error_element.text(error_element.text() + "- Contain at least one Digit (0-9)\n");
+        error_element.text(error_element.text() + "- Mindestens eine Zahl enthalten (0-9)\n");
         validate_pw = false;
     }
     if (!/[^A-Za-z0-9]/.test(password)) {
-        error_element.text(error_element.text() + "- Contain at least one Special character (~`!@#$%^&*()+=_-{}[]\\|:;”’?/<>,.)\n");
+        error_element.text(error_element.text() + "- Mindestens ein Sonderzeichen enthalten (~`!@#$%^&*()+=_-{}[]\\|:;”’?/<>,.)\n");
         validate_pw = false;
     }
     if (password.length < 8) {
-        error_element.text(error_element.text() + "- Be a minimum of eight (8) characters in length \n");
+        error_element.text(error_element.text() + "- Eine Länge von mehr als 8 haben \n");
         validate_pw = false;
     }
     if (validate_pw) {
