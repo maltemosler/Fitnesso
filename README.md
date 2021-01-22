@@ -25,12 +25,13 @@
 
 ## Prototype:
 
-![prototype-1](Kommentare/pics/prototype/prototype-1.jpg)
-![prototype-2](Kommentare/pics/prototype/prototype-2.jpg)
-![prototype-3](Kommentare/pics/prototype/prototype-3.jpg)
-![prototype-4](Kommentare/pics/prototype/prototype-4.jpg)
-![prototype-5](Kommentare/pics/prototype/prototype-5.jpg)
-![prototype-6](Kommentare/pics/prototype/prototype-6.jpg)
+![prototype-1](Kommentare/pics/prototype/Index.png)
+![prototype-2](Kommentare/pics/prototype/User-anzeigen.png)
+![prototype-3](Kommentare/pics/prototype/Useranzeige-Löschen.png)
+![prototype-4](Kommentare/pics/prototype/User-Passwort-zurücksetzen.png)
+![prototype-5](Kommentare/pics/prototype/User-anlegen.png)
+![prototype-6](Kommentare/pics/prototype/Ziele-Adminansicht.png)
+![prototype-7](Kommentare/pics/prototype/Ziele-Useransicht.png)
 
 ## Informationsarchitektur:
 
