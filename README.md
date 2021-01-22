@@ -31,48 +31,48 @@ Die Login-Seite ist relative minimalistisch gestaltet, da der
 Benutzer beim Besuchen der Webseite nicht mit
 Informationen überladen werden soll.
 
-Im Hintergrund läuft ein Fitness Video das als "Eyecatcher"
+Im Hintergrund läuft ein Fitnessvideo das als "Eyecatcher"
 dient und dem Benutzer direkt vermittelt, dass es sich hierbei
 um eine Fitness Webseite handelt.
 
-Der Benutzer gibt bei dem Username seine E-Mail Adresse
+Der Benutzer gibt bei dem Username seine E-Mail-Adresse
 und das Passwort, welches er von dem Trainer erhalten hat,
 ein. Danach wird er weiter auf die Seite mit den Zielen
 geleitet.
 
 Der Trainer loggt sich über die gleiche Seite ein. Hierbei wird
-durch Backend überprüft ob es sich um einen Trainer oder
+durch das Backend überprüft, ob es sich um einen Trainer oder
 Nutzer handelt. Der Trainer wird danach auf die
 Nutzerübersicht weitergeleitet. 
 ![prototype-2](Kommentare/pics/prototype/User-anzeigen.png)
 Die Nutzerverwaltung bietet dem Trainer die Möglichkeit
 eine Übersicht über alle Nutzer zu erhalten. Diese
 Verwaltung dient als zentrale Seite für den Trainer.
-Hierrüber kann der Trainer die Stammdaten der Benutzer
+Hierüber kann der Trainer die Stammdaten der Benutzer
 sehen, den aktuellen Trainings Fortschritt, auf die Ziele der
 Benutzer zugreifen, das Passwort ändern und den
 Benutzer löschen.
 
 Eine Suchfunktion erlaubt es dem Trainer Benutzer schnell
-zu finden. Hierbei wird der Nutzer auf den das
+zu finden. Hierbei wird der Nutzer, auf den das
 Suchkriterium zutrifft markiert, sodass der Trainer den
 Nutzer schnell finden kann.
 
-Die Ziele und die Passwort ändern Funktion können über
+Die Ziele und die Passwortändern-Funktion können über
 einen Knopf aufgerufen werden, wodurch der Trainer auf
 die entsprechende Seite weitergeleitet wird.
 
-Drückt der Trainer auf den Löschen Knopf wird ein PopUp eingeblendet. In diesem Pop-Up wird der Trainer
-erneut gefragt ob er den Benutzer mit anzeige von Vorund Nachnamen wirklich löschen möchte. Durch zwei
+Drückt der Trainer auf den Löschen-Knopf wird ein PopUp eingeblendet. In diesem PopUp wird der Trainer
+erneut gefragt, ob er den Benutzer mit anzeige von vor,- und Nachnamen wirklich löschen möchte. Durch zwei
 Knöpfe kann der Trainer die Löschung bestätigen oder
 abbrechen. Dies dient zur Sicherheit, dass der Trainer
-nicht aus versehen einen Benutzer löscht.
+nicht aus Versehen einen Benutzer löscht.
 ![prototype-3](Kommentare/pics/prototype/Useranzeige-Löschen.png)
 ![prototype-4](Kommentare/pics/prototype/User-Passwort-zurücksetzen.png)
-Eine der Hauptaufgaben die der Trainer hat ist es neue
+Eine der Hauptaufgaben, die der Trainer hat, ist es neue
 Benutzer anzulegen.
-Hierfür muss der Trainer den Vornamen, Nachnamen, die EMail und zwei mal das
-Passwort eingeben. Dabei wird überprüft ob es sich bei der EMail um eine gültige E-Mail
+Hierfür muss der Trainer den Vornamen, Nachnamen, die E-Mail und zweimal das
+Passwort eingeben. Dabei wird überprüft, ob es sich bei der E-Mail um eine gültige E-Mail
 (richtige Formation xxx@xxx.xx) handelt und ob das Passwort
 den Anforderungen
  entspricht (8 Zeichen, mindestens ein Zeichen von jeder
@@ -85,19 +85,18 @@ den Anforderungen) wird dies dem Trainer angezeigt und die
 Felder werden rot markiert.
 
 Bei dem Passwort Feld wird zusätzlich der Hinweis
-eingeblendet welche Kriterien erfüllt
-werden müssen sollte das eingeben Passwort vom Trainer
+eingeblendet, welche Kriterien erfüllt
+werden müssen. Sollte das eingeben Passwort vom Trainer
 nicht mit diesen übereinstimmen.
 ![prototype-5](Kommentare/pics/prototype/User-anlegen.png)
 Der Trainer muss die Möglichkeit haben das Passwort
 vom Benutzer zurückzusetzen. Um auf diese Ansicht
-zu kommen muss der Trainer über die
+zu kommen, muss der Trainer über die
 Nutzerverwaltung auf Passwort zurücksetzen, bei
 dem entsprechenden Benutzer, klicken. Danach wird
 er auf diese Seite weitergeleitet. Dem Trainer wird
-dabei angezeigt um welchen Nutzer es sich handelt.
-Dies dient zur Sicherheit, dass der Trainer nicht aus
-versehen das falsche Passwort ändert.
+dabei angezeigt, um welchen Nutzer es sich handelt.
+Dies dient zur Sicherheit, dass der Trainer nicht aus Versehen das falsche Passwort ändert.
 
 Der Trainer gibt über diese Seite das neue Passwort
 für den Benutzer ein. Hierbei greifen die gleichen
@@ -105,57 +104,59 @@ Passwortkriterien wie bei der Erstellung des Nutzer (8
 Zeichen mit jeweils einem Zeichen aus einer
 Zeichengruppe).
 
-Sobald der Trainer auf Passwort zurücksetzen klickt ist
+Sobald der Trainer auf Passwort zurücksetzen klickt, ist
 das Passwort geändert und der Nutzer kann sich mit
 dem neuen Passwort anmelden.
 ![prototype-6](Kommentare/pics/prototype/Ziele-Adminansicht.png)
-Über den Benutzeransicht kann der Trainer
+Über der Benutzeransicht kann der Trainer
 direkt die Ziele der einzelnen Benutzer
 einsehen.
 
-Hierbei wird dem Trainer angezeigt um welchen
-Ziele von welchem Benutzer es sich handelt.
+Hierbei wird dem Trainer angezeigt, um welchen Zielen von welchem Benutzer es sich handelt.
 Der Trainer sieht immer die aktuell Stand der
 jeweiligen Ziele des Benutzers und kann diese
 genau so bearbeiten wie der Nutzer es tut.
 Der Trainer kann neue Hauptziele erstellen und
 dort unterziele mittels Eingabefeld erstellen.
+
 Der Trainer kann durch verschiedene Buttons
 Unterziele als erledigt markieren oder löschen.
 Hauptziele lassen sich nur löschen. Unterhalb
 der Box für das Hauptziel wird ein
 Fortschrittsbalken angezeigt. Dieser füllt bzw.
-senkt sich automatisch sobald Unterziele
+senkt sich automatisch, sobald Unterziele
 erledigt wurden oder hinzugefügt wurden.
-Die Ansicht des Benutzer entspricht der
+
+Die Ansicht des Benutzers entspricht der
 gleichen wie des Trainers nur mit dem
 Unterschied das der Benutzer nicht seinen
 eigenen Namen angezeigt bekommt und nur
 auf seine Ziele zugriff hat.
 ![prototype-7](Kommentare/pics/prototype/Ziele-Useransicht.png)
-Über den Benutzeransicht kann der Trainer
+Über der Benutzeransicht kann der Trainer
 direkt die Ziele der einzelnen Benutzer
 einsehen.
 
-Hierbei wird dem Trainer angezeigt um welchen
+Hierbei wird dem Trainer angezeigt, um welche
 Ziele von welchem Benutzer es sich handelt.
 Der Trainer sieht immer die aktuell Stand der
 jeweiligen Ziele des Benutzers und kann diese
 genau so bearbeiten wie der Nutzer es tut.
 Der Trainer kann neue Hauptziele erstellen und
 dort unterziele mittels Eingabefeld erstellen.
+
 Der Trainer kann durch verschiedene Buttons
 Unterziele als erledigt markieren oder löschen.
 Hauptziele lassen sich nur löschen. Unterhalb
 der Box für das Hauptziel wird ein
 Fortschrittsbalken angezeigt. Dieser füllt bzw.
-senkt sich automatisch sobald Unterziele
+senkt sich automatisch, sobald Unterziele
 erledigt wurden oder hinzugefügt wurden.
-Die Ansicht des Benutzer entspricht der
+Die Ansicht des Benutzers entspricht der
 gleichen wie des Trainers nur mit dem
 Unterschied das der Benutzer nicht seinen
 eigenen Namen angezeigt bekommt und nur
-auf seine Ziele zugriff hat
+auf seine Ziele zugriff hat.
 
 ## Informationsarchitektur:
 
