@@ -206,9 +206,17 @@ Nachdem Python installiert wurde, können Sie die unten stehenden Befehle ausfü
 
 Run:
 
-    python manage.py runserver localhost:8080
+    python manage.py runserver
 
+Aufgerufen kann die Webseite dann standardmäßig mit: http://127.0.0.1:8000/
 
+Getestete Browser:
+  - Chrome
+  - Firefox
+  - Edge
+
+Bei allen Browsern funktioniert die Webseite ohne nennenswerte Probleme. 
+In Firefox ist es bei der Login Seite möglich das hintergrund Video zu minimieren, ist jedoch unserer Auffassung nach nicht relevant, da keine Funktionalitäten einschränkt werden. 
 
 ## Unit-Tests:
 
